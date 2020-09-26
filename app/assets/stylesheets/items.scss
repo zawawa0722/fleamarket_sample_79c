@@ -1,3 +1,20 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  overflow: scroll;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-field{
+  background-color:white;
+  height:560px;
+  width:100vw;
+  &__photo{
+    height:560px;
+    width:100wv;
+    background-color:white;
+  }
+}
