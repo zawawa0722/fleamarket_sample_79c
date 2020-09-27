@@ -10,21 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_145349) do
+ActiveRecord::Schema.define(version: 2020_09_27_163950) do
+
+  create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "card_number", null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "security_number", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pays_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname"
-    t.string "email"
-    t.string "password"
-    t.string "family_name"
-    t.string "first_name"
-    t.string "family_name_kana"
-    t.string "first_name_kana"
-    t.integer "birthday_year"
-    t.integer "birtuhday_month"
-    t.integer "biruthday_day"
+    t.string "nickname", null: false
+    t.string "email", null: false
+    t.string "password", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthday_year", null: false
+    t.integer "birtuhday_month", null: false
+    t.integer "biruthday_day", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pays", "users"
 end
