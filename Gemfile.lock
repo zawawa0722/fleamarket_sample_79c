@@ -258,6 +258,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable
+  actionview
+  activestorage
   bootsnap (>= 1.4.2)
   byebug
   capistrano
@@ -278,7 +281,9 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets
   turbolinks (~> 5)
+  turbolinks-source
   tzinfo-data
   unicorn
   web-console (>= 3.3.0)
