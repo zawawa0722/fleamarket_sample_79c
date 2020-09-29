@@ -1,0 +1,76 @@
+.Pickup__Contents {
+  background-color: #f8f8f8;
+  height: auto;
+  width: auto;
+  &__Title {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &__Subtitle {
+    color: #3ccace;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  &__Box {
+    height: 40vh;
+    margin: 0 15%;
+    background-color: whitesmoke;
+  }
+  &__Lists {
+    height: 60%;
+    display: flex;
+  }
+  &__List1 {
+    height: 100%;
+    width: 20%;
+  }
+  &__Introduction {
+    height: 40%;
+    display: flex;
+    &__List1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 20%;
+
+      &__Left {
+        &__Name {
+          padding-bottom: 5px;
+          display: block;
+        }
+        &__Plice {
+          display: block;
+          padding-bottom: 5px;
+        }
+        &__Tax {
+          display: block;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  &__List2 {
+    height: 100%;
+    width: 20%;
+  }
+  &__List3 {
+    height: 100%;
+    width: 20%;
+  }
+  &__List4 {
+    height: 100%;
+    width: 20%;
+  }
+  &__List5 {
+    height: 100%;
+    width: 20%;
+  }
+}
