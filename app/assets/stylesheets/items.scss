@@ -138,13 +138,113 @@
 //ここまで
 
 .main-field{
-  background-color:white;
-  height:560px;
-  width:100vw;
+  background-color: white;
+  width: 100vw;
   &__photo{
-    height:560px;
-    width:100wv;
-    background-color:white;
+    height: 560px;
+    width: 100%;
+    background-color: white;
+    background-image: image-url('bg-mainVisual-pict_pc');
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__content{
+      max-width: 1220px;
+      margin-left:60px;
+      &__title{
+        color: #fff;
+        font-size: 60px;
+        line-height: 1.2;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__text{
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.7;
+        margin: 25px 0 0 0;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__btn{
+        margin-top:25px;
+        display:flex;
+        &__app{
+
+        }
+        &__goo{
+
+        }
+      }
+    }
+  }
+  &__intro{
+    width: 100vw;
+    height: 450px;
+    padding: 60px 20px;
+    &__title{
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    &__title::after{
+      content:"";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__lists{
+      max-width:1220px;
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      &__list{
+        width: 30%;
+        margin: 16px 5% 0 0;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        align-items: center;
+        &__pict{
+          
+        }
+      }
+    }
+  }
+  &__second{
+    width: 100vw;
+    height: 400px;
+    background-image: image-url('bg-topMiddleDl-pict.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__content{
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-align: left;
+      width: 100%;
+      margin: 0 auto;
+      &__title{
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      &__text{
+        font-size: 18px;
+        margin: 20px 0 30px;
+      }
+    }
   }
 }
 
