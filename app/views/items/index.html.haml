@@ -1,10 +1,11 @@
+
 .wrapper
   = render "front_suzuki"
   
   .main-field
     .main-field__photo
       .main-field__photo__content
-        %h2.main-field__photo__content__title 
+        .main-field__photo__content__title 
           %br
           人生を変えるフリマアプリ
         %p.main-field__photo__content__text
@@ -45,6 +46,7 @@
         %li.main-field__intro__lists__list
           .main-field__intro__lists__list__pict
             = image_tag 'pict-reason-03.jpg'
+            = image_tag '/assets/images/items//pict-reason-03.jpg'
           .main-field__intro__lists__list__title
             手数料 業界最安
           .main-field__intro__lists__list__text
@@ -69,3 +71,7 @@
             =link_to "#" do
               =image_tag ''
       = render "under_suzuki"
+              =image_tag '/assets/images/items/'
+          %a.main-field__second__content__btn__goo
+            =link_to "#" do
+              =image_tag '/assets/images/items/'

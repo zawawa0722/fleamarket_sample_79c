@@ -1,0 +1,40 @@
+.Banner {
+  background-color: #f8f8f8;
+  height: 50vh;
+  width: 100vw;
+  margin-top: 150px;
+  position: relative;
+  &__Text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 100px;
+    width: 70%;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    &__First {
+      font-size: 25px;
+      color: white;
+      display: block;
+      font-weight: bold;
+    }
+    &__Second {
+      font-size: 40px;
+      color: white;
+    }
+    &__Icon {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      &__Icon1 {
+        padding-right: 5px;
+      }
+      &__Icon2 {
+        padding-left: 5px;
+      }
+    }
+  }
+}
