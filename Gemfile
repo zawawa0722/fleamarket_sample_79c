@@ -69,3 +69,4 @@ gem 'actioncable'
 gem 'activestorage'
 gem 'actionview'
 gem 'turbolinks-source'
+gem "jquery-rails"
