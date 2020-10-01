@@ -66,3 +66,16 @@ end
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 gem 'rubocop', require: false
+
+gem 'sprockets'
+
+gem 'actioncable'
+
+gem 'activestorage'
+
+gem 'actionview'
+
+gem 'turbolinks-source'
+
+gem "jquery-rails"
+
