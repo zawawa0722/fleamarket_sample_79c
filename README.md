@@ -28,80 +28,67 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|------|
 |nickname|string|null:false|
-|email|string|null:false,uniqueness:true|
-|password|string|null:false,uniqueness:true|
+|email|string|null:false,unique:true:true|
+|password|string|null:false,unique:true:true|
 |family_name|string|null:false|
 |first_name|string|null:false|
 |family_name_kana|string|null:false|
 |first_name_kana|string|null:false|
-|birthday_year|integer|null:false|
-|birthday_month|integer|null:false|
-|birthday_day|integer|null:false|
+|birthday|date|null:false|
 
 ##  Association
 
--has_many :comments
--has_many :pays
--has_many :address
--has_many :user_items
+-has_many :addresses
+-has_many :exhibitors
 -has_many :items
+-has_many :comments
 
-## paysテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|user_id|reference|null:false|
-|card_number|string|null:false,uniqueness:true|
-|year|integer|null:false|
-|month|integer|null:false|
-|security_number|integer|null:false|
-
-##  Association
-
--belongs to :user
-
-##  addressテーブル
+##  addressesテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|null:false|
-|prefecture_id|reference|null:false|
-|municipalitie|string|null:false|
+|user_id|references|
+|postcode|string|
+|municipalities|string|null:false|
 |address|string|null:false|
 |building|string|null:false|
-|phone_number|integer|null:false|
+|phone_number|string|null:false|
 
 ##  Association
 
 -belongs to :user
 
-##  Itemsテーブル
+##  itemsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|null:false,foreign_key|
+|user_id|references|foreign_key: true|
 |name|string|null:false|
 |price|string|null:false|
-|category_id|reference|null:false|
-|brand_id|reference||
-|condition_id|reference|null:false|
+|category_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|condition_id|references|foreign_key: true|
 |comment|text|null:false|
 |shopping_charge|field|null:false|
-|prefecture_id|reference|null:false|
+|prefecture_id|references|foreign_key: true|
 |shopping_date|field|null:false|
 
 ##  Association
 
--has_many :user_items
+-has_many :exhibitors
 -has_many :comments
+-has_many :images
 -belongs to :user
+-belongs to :category
+-belongs to :brand
+-belongs to :condition
 
-##  user_itemsテーブル
+##  exhibitorsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|null:false,foreign_key|
-|item_id|reference|null:false,foreign_key|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 
 ##  Association
 
@@ -112,8 +99,8 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|null:false|
-|item_id|reference|null:false|
+|user_id|references|null:false|
+|item_id|references|null:false|
 |comment|text|null:false|
 
 ##  Association
@@ -125,9 +112,39 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|item_id|reference|null:false|
+|item_id|references|null:false|
 |image|field|null:false|
 
 ##  Association
 
 -belong to :item
+
+##  categoriesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|category|string|null:false|
+
+##  Association
+
+-has_many :items
+
+##  brandsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|brand|string|null:false|
+
+##  Association
+
+-has_many :items
+
+##  conditionsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|condition|string|null:false|
+
+##  Association
+
+-has_many :items

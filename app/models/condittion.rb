@@ -1,2 +1,2 @@
-class Condittion < ApplicationRecord
+class Condition < ApplicationRecord
 end
