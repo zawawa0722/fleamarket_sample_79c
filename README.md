@@ -34,9 +34,7 @@ Things you may want to cover:
 |first_name|string|null:false|
 |family_name_kana|string|null:false|
 |first_name_kana|string|null:false|
-|birthday_year|integer|null:false|
-|birthday_month|integer|null:false|
-|birthday_day|integer|null:false|
+|birthday|date|null:false|
 
 ##  Association
 
@@ -49,44 +47,30 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|
-|prefecture_id|reference|
+|user_id|references|
+|postcode|string|
 |municipalities|string|null:false|
 |address|string|null:false|
 |building|string|null:false|
-|phone_number|integer|null:false|
+|phone_number|string|null:false|
 
 ##  Association
 
--belongs to :users
--belongs to :prefectures
-
-##  prefecturesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|prefecture|string|null:false|
-
-##  Association
-
--has_many :address
--has_many :items
-
-
+-belongs to :user
 
 ##  itemsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|foreign_key|
+|user_id|references|foreign_key: true|
 |name|string|null:false|
 |price|string|null:false|
-|category_id|reference|foreign_key|
-|brand_id|reference|foreign_key|
-|condition_id|reference|foreign_key|
+|category_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|condition_id|references|foreign_key: true|
 |comment|text|null:false|
 |shopping_charge|field|null:false|
-|prefecture_id|reference|foreign_key|
+|prefecture_id|references|foreign_key: true|
 |shopping_date|field|null:false|
 
 ##  Association
@@ -94,41 +78,41 @@ Things you may want to cover:
 -has_many :exhibitors
 -has_many :comments
 -has_many :images
--belongs to :users
--belongs to :categories
--belongs to :brands
--belongs to :conditions
+-belongs to :user
+-belongs to :category
+-belongs to :brand
+-belongs to :condition
 
 ##  exhibitorsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|foreign_key|
-|item_id|reference|foreign_key|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 
 ##  Association
 
--belongs to :items
--belongs to :users
+-belongs to :item
+-belongs to :user
 
 ## commentsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|reference|null:false|
-|item_id|reference|null:false|
+|user_id|references|null:false|
+|item_id|references|null:false|
 |comment|text|null:false|
 
 ##  Association
 
--belongs to :users
--belongs to :items
+-belongs to :user
+-belongs to :item
 
 ##  imagesテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|item_id|reference|null:false|
+|item_id|references|null:false|
 |image|field|null:false|
 
 ##  Association
