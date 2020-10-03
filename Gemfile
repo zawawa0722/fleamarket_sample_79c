@@ -79,3 +79,5 @@ gem 'turbolinks-source'
 
 gem "jquery-rails"
 
+gem 'active_hash'
+
