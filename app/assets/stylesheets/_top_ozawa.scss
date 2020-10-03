@@ -1,0 +1,36 @@
+.Description {
+  height: 100vh;
+  width: 100vw;
+  &__Contents {
+    margin: 30px 50px;
+    &__Title {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      height: 30px;
+    }
+    &__Box {
+      height: 100px;
+    }
+    &__Boxes {
+      display: flex;
+      &__image {
+        height: 40%;
+      }
+    }
+    &__Box1 {
+      width: 33%;
+    }
+    &__Detail__Box {
+      height: 60%;
+      &__Title {
+        font-weight: bold;
+        font-size: 20px;
+        height: 30%;
+      }
+      &__Description {
+        height: 70%;
+      }
+    }
+  }
+}
