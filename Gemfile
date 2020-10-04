@@ -79,3 +79,4 @@ gem 'turbolinks-source'
 
 gem "jquery-rails"
 
+gem "fog-aws"
