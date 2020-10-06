@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_111949) do
+ActiveRecord::Schema.define(version: 2020_10_06_103549) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "prefecture_id"
+    t.string "postcode", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
     t.string "building", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["prefecture_id"], name: "index_addresses_on_prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -51,6 +50,14 @@ ActiveRecord::Schema.define(version: 2020_09_29_111949) do
     t.string "condition", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
   create_table "exhibitors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,17 +111,15 @@ ActiveRecord::Schema.define(version: 2020_09_29_111949) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.integer "birthday_year", null: false
-    t.integer "birtuhday_month", null: false
-    t.integer "biruthday_day", null: false
+    t.date "birthday", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "addresses", "prefectures"
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "exhibitors", "items"
   add_foreign_key "exhibitors", "users"
   add_foreign_key "images", "items"

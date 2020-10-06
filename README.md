@@ -79,9 +79,6 @@ Things you may want to cover:
 -has_many :comments
 -has_many :images
 -belongs to :user
--belongs to :category
--belongs to :brand
--belongs to :condition
 
 ##  exhibitorsテーブル
 
@@ -119,32 +116,13 @@ Things you may want to cover:
 
 -belong to :item
 
-##  categoriesテーブル
+## credit_cardsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|category|string|null:false|
+|user_id|references|null:false|
+|token|string|
 
 ##  Association
 
--has_many :items
-
-##  brandsテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|brand|string|null:false|
-
-##  Association
-
--has_many :items
-
-##  conditionsテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|condition|string|null:false|
-
-##  Association
-
--has_many :items
+-belongs to :user
