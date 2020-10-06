@@ -1,0 +1,58 @@
+.Description {
+  height: 100vh;
+  width: 100vw;
+  &__Contents {
+    margin: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    &__Title {
+      font-weight: bold;
+      font-size: 30px;
+      text-align: center;
+      height: 30px;
+    }
+    &__Border {
+      height: 10px;
+      width: 80px;
+      border-bottom: 5px solid #3ccace;
+      margin-top: 20px;
+    }
+    &__Box {
+      height: 100px;
+    }
+    &__Boxes {
+      display: flex;
+      justify-content: center;
+      margin: 50px 150px;
+    }
+    &__Box1 {
+      width: 33%;
+      padding: 30px;
+    }
+    &__Box2 {
+      width: 33%;
+      padding: 30px;
+    }
+    &__Box3 {
+      width: 33%;
+      padding: 30px;
+    }
+    &__Detail__Box {
+      height: 60%;
+      &__Title {
+        font-weight: bold;
+        font-size: 20px;
+        height: 50px;
+        padding: 5px;
+        text-align: center;
+      }
+      &__Description {
+        height: 70%;
+        padding: 5px;
+        text-align: center;
+      }
+    }
+  }
+}
