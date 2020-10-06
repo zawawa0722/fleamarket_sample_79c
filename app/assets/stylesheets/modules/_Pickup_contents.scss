@@ -1,9 +1,9 @@
 .Pickup__Contents {
-  background-color: #f8f8f8;
+  //background-color: #f8f8f8;
   height: auto;
   width: auto;
   &__Title {
-    padding-top: 80px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +23,7 @@
     height: 40vh;
     margin: 0 15%;
     background-color: whitesmoke;
+    margin-bottom: 50px;
   }
   &__Lists {
     height: 60%;

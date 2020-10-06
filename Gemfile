@@ -60,7 +60,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
@@ -84,3 +84,4 @@ gem 'active_hash'
 gem "fog-aws"
 
 gem 'carrierwave', '~> 2.0'
+

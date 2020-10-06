@@ -32,7 +32,7 @@
         display: flex;
         &__btn{
           background-color:#2af118;
-          width: 50vw;
+          width: 70vw;
           height: 40px;
         }
         &__btn__s{
@@ -103,8 +103,6 @@
         padding: 0 0 0 16px;
       }
     }
-
-
     &__right-side{
       margin-left: auto;
       display: flex;
@@ -246,9 +244,94 @@
       }
     }
   }
+  &__feature{
+    padding: 60px 100px;
+    background-color: #fff;
+    &__title{
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    &__title::after{
+      content:"";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__lists{
+      max-width: 1040px + 20px;
+      width: 100%;
+      display: flex;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      &__list{
+        display: flex;
+        flex-direction: column;
+        width: calc(1 / 3 * 100%);
+        text-align: center;
+        padding: 0 20px;
+          &__pct{
+            width: 70%;
+            margin: 0 auto;
+            line-height: 120px;
+          }
+        &__title{
+          margin: 38px 0 10px;
+          font-size: 19px;
+          font-weight: bold;
+        }
+        &__text{
+          margin: 0 0 40px;
+          font-size: 17px;
+          text-align: left;
+        }
+      }
+    }
+  }
 }
 
 //ここからフロント下部(鈴木実装分)→_under.suzuki.htmal.haml
+.app-area{
+  padding:  100px 40px;
+  background-image: image-url('bg-appBanner-pict');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &__in{
+    color: #fff;
+    text-align: center;
+    &__title{
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__text{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__btn{
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 0 0;
+      &__app{
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+      &__goo{
+        margin-top: 10px;
+      }
+    }
+  }
+}
 .under-field{
   padding: 60px 0;
   color: #fff;

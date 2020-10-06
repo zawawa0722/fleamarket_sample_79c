@@ -294,7 +294,7 @@ GEM
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
-    unicorn (5.7.0)
+    unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
     web-console (4.0.4)
@@ -353,7 +353,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   turbolinks-source
   tzinfo-data
-  unicorn
+  unicorn (= 5.4.1)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
