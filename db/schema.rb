@@ -14,13 +14,14 @@ ActiveRecord::Schema.define(version: 2020_10_06_103549) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "postcode", null: false
+    t.bigint "prefecture_id"
     t.string "municipalities", null: false
     t.string "address", null: false
     t.string "building", null: false
-    t.string "phone_number", null: false
+    t.integer "phone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id"], name: "index_addresses_on_prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -111,11 +112,14 @@ ActiveRecord::Schema.define(version: 2020_10_06_103549) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.date "birthday", null: false
+    t.integer "birthday_year", null: false
+    t.integer "birtuhday_month", null: false
+    t.integer "biruthday_day", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "addresses", "prefectures"
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
