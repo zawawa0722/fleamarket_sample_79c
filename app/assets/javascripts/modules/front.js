@@ -8,4 +8,3 @@ $(function(){
   $('html').click(function() {
      $('ul.upper-field__navigate__left-side__item ul').slideUp(150);
   });
-});　
