@@ -65,9 +65,6 @@ Things you may want to cover:
 |user_id|references|foreign_key: true|
 |name|string|null:false|
 |price|string|null:false|
-|category_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
-|condition_id|references|foreign_key: true|
 |comment|text|null:false|
 |shopping_charge|field|null:false|
 |prefecture_id|references|foreign_key: true|
@@ -77,7 +74,6 @@ Things you may want to cover:
 
 -has_many :exhibitors
 -has_many :comments
--has_many :images
 -belongs to :user
 
 ##  exhibitorsテーブル

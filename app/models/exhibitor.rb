@@ -1,2 +1,0 @@
-class Exhibitor < ApplicationRecord
-end
