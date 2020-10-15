@@ -8,22 +8,23 @@
         = f.fields_for :product_images do |image|
           .LeftContents__FirstContent
             .LeftContents__FirstContent__img
+              = image_tag src="first_image.png",id: "img0"
           .image_group{"data-index": 0}
-            = image.file_field :image,id:"product_images_attributes_0_image"            
+            = f.file_field :image,id:"product_images_attributes_0_image"
           %ul.LeftContents__SecondContent
             %li.LeftContents__SecondContent__Center
               .LeftContents__SecondContent__Center__img
+                = image_tag src="icon_image.png",id: "img1"
             %input{id: "product_images_attributes_1_image", :name => "product[product_images_attributes][1][image]", type: "file"}/
-
             %li.LeftContents__SecondContent__Center{id:"SecondContent_nil2"}
               .LeftContents__SecondContent__Center__img
+                = image_tag src="icon_image.png",id: "img2"
             %input{id: "product_images_attributes_2_image", :name => "product[product_images_attributes][2][image]", type: "file"}/
 
             %li.LeftContents__SecondContent__Center{id:"SecondContent_nil3"}
               .LeftContents__SecondContent__Center__img
+                = image_tag src="icon_image.png",id: "img3"
             %input{id: "product_images_attributes_3_image", :name => "product[product_images_attributes][3][image]", type: "file"}/
-
-
 
       .LeftContents__ThirdContent
         .LeftContents__ThirdContent__Top
@@ -138,4 +139,4 @@
     %button{:type => "submit"}
       確認
       %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
-
+      
