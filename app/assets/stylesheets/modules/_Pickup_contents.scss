@@ -22,7 +22,6 @@
   &__Box {
     height: 40vh;
     margin: 0 15%;
-    background-color: whitesmoke;
     margin-bottom: 50px;
   }
   &__Lists {
@@ -32,11 +31,13 @@
   }
   &__List1 {
     width: 20%;
+    margin-right: 20px;
     &__Introduction {
       height: 40%;
       display: flex;
       align-items: center;
       justify-content: space-around;
+      background-color: whitesmoke;
       &__Left {
         width: 50%;
         padding-left: 10px;
@@ -211,4 +212,3 @@
     }
   }
 }
- 
