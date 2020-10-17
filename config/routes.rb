@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "front#index"
   resources :items
-  get 'items/index'
   get 'detail/index'
+  resources :glances
+  get 'items/index'
+  get 'glances/index'
 end
+

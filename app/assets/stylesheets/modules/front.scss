@@ -31,14 +31,8 @@
       &__search-box{
         display: flex;
         &__btn{
-          background-color:#2af118;
-          width: 70vw;
+          width: 900px;
           height: 40px;
-        }
-        &__btn__s{
-          width: 36px;
-          height: 40px;
-          background-color: #3ccace;
         }
       }
     }
@@ -167,12 +161,6 @@
       &__btn{
         margin-top:25px;
         display:flex;
-        &__app{
-
-        }
-        &__goo{
-
-        }
       }
     }
   }
@@ -213,9 +201,6 @@
         text-align: left;
         flex-direction: column;
         align-items: center;
-        &__pict{
-          
-        }
       }
     }
   }
@@ -373,3 +358,135 @@
   }
 }
 //ここまで
+//検索ボックス
+$btn-d: 5em;
+$txt-w: 4*$btn-d;
+$txt-h: .65*$btn-d;
+$txt-c: #80f3f7;
+$mag-d: .5*$txt-h;
+$mag-f: .125;
+$mag-w: $mag-f*$mag-d;
+$mag-c: #6a7c7c;
+$t: .65s;
+
+*, :before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit
+}
+
+html { overflow-x: hidden }
+
+
+[id='search-btn'] {
+    position: absolute;
+    left: -100vw;
+    
+    ~ * {
+        --i: var(--pos, 1);
+        --j: calc(1 - var(--i))
+    }
+    
+    &:checked ~ * { --pos: 0 }
+}
+
+[for='search-btn'] {
+    order: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-left: -.25*$btn-d;
+    margin-top: 5px;
+    width: $btn-d; height: $btn-d;
+    border-radius: 50%;
+    transform: translate(var(--pos, -.5*$txt-w)) rotate(45deg);
+    background: hsl(calc(1500 - var(--i)*260), calc(100% + var(--i)*85%), calc(49% + var(--i)*13%));
+    text-indent: -100vw;
+    transition: $t ease-out;
+    cursor: pointer;
+    
+    &:before, &:after {
+        position: absolute;
+        top: 50%; left: 50%;
+        margin: -.5*$mag-d;
+        width: $mag-d; height: $mag-d;
+        transition: inherit;
+        content: ''
+    }
+    
+    &:before {
+        margin-top: -.4*$mag-w;
+        height: $mag-w;
+        transform-origin: 100% 0;
+        transform: translate(var(--pos, .25*$mag-d)) 
+            scalex(calc(1 - var(--i)*.5));
+        background: $mag-c;
+    }
+    
+    &:after {
+        border: solid $mag-w $mag-c;
+        border-radius: calc(var(--i)*50%);
+        transform: translate(var(--pos, -.25*$mag-d)) 
+            scalex(calc(var(--j)*#{$mag-f} + var(--i)));
+        box-shadow: inset 0 0 0 calc(var(--j)*#{.5*$mag-d}) black;
+        transition-property: border-radius, transform, box-shadow;
+        transition-timing-function: 
+            cubic-bezier(calc(var(--j)*.42),0,calc(1 - var(--i)*.42),1), 
+            cubic-bezier(calc(var(--i)*.42),0,calc(1 - var(--j)*.42),1)
+    }
+}
+
+[id='search-bar'] {
+    margin-right: -.25*$btn-d;
+    border: none;
+    padding: 0 1em;
+    margin-top: 20px;
+    width: 500px; height: $txt-h;
+    border-radius: $txt-h;
+    transform: translate(var(--pos, .5*$txt-w));
+    background: $mag-c;
+    --cp: inset(-2em var(--pos, 100%) -2em -2em);
+    -webkit-clip-path: var(--cp);
+                    clip-path: var(--cp);
+    color: #fff;
+    font: 1em century gothic, verdana, arial, sans-serif;
+    transition: $t;
+    
+    &::placeholder {
+      opacity: .5;
+      color: inherit;
+      font-size: .875em;
+      letter-spacing: 1px;
+      text-shadow: 0 0 1px, 0 0 2px
+  }
+  
+    
+    &:focus {
+        outline: none;
+        background: $txt-c;
+        color:$mag-c;
+    }
+  }
+=======
+.exhibition-btn{
+  width: 120px;
+  height: 116px;
+  background-color: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  &__icon{
+    width: 60%;
+  }
+}
