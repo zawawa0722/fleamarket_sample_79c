@@ -19,4 +19,4 @@ production:
   database: fleamarket_sample_79c_production #アプリケーション名はご自身のものに変更してください
   username: root #rootに変更
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
