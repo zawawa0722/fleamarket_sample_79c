@@ -5,9 +5,10 @@
         %a(href="/")
           = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
       .upper-field__in__main__search-box
-        %input#search-btn{:type => "checkbox"}/
-        %label{:for => "search-btn"}  Show search bar
-        %input#search-bar{:placeholder => "検索ワードを入力してください", :type => "text"}/
+        .upper-field__in__main__search-box__btn
+          検索ボックスが入ります
+        .upper-field__in__main__search-box__btn__s
+          虫眼鏡
   .upper-field__navigate
     .upper-field__navigate__left-side
       %ul.upper-field__navigate__left-side__item
@@ -504,18 +505,17 @@
           %a(href="#") ブランド
     %ul.upper-field__navigate__right-side
       %li.upper-field__navigate__right-side__login
-      - if user_signed_in?
-        .upper-field__navigate__right-side__register.grid-6
-          ログイン中
-          //= link_to "マイページ", new__path, class: "post"
-      - else
-        .grid-6
-          = link_to "新規登録", new_user_registration_path, class: "post"
-          
-    %li.upper-field__navigate__right-side__register
-      - if user_signed_in?
-        .upper-field__navigate__right-side__login.grid-6
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-      - else
-        .grid-6
-          = link_to "ログイン", new_user_session_path, class: "post"
+        - if user_signed_in?
+          .upper-field__navigate__right-side__login.grid-6
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          .grid-6
+            = link_to "ログイン", new_user_session_path, class: "post"
+            
+      %li.upper-field__navigate__right-side__register
+        - if user_signed_in?
+          .upper-field__navigate__right-side__register.grid-6
+            = link_to "マイページ", new_tweet_path, class: "post"
+        - else
+          .grid-6
+            = link_to "新規登録", new_user_registration_path, class: "post"
