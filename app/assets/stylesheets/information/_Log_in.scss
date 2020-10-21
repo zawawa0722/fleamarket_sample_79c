@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin square($w,$h) {
+  width: $w;
+  height: $h;
+}
