@@ -3,7 +3,7 @@
     %h2 sign_up
     .container
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-        = devise_error_messages!
+        = render "devise/shared/error_messages", resource: @user
         .field_box
           .field_abel
             = f.label :ニックネーム 
@@ -66,4 +66,5 @@
             = resource.errors.full_messages_for(:birthday)[0]
           
           .actions
-            = f.submit "登録"
+            = f.submit "Next"
+        = render "devise/shared/links"
