@@ -86,3 +86,5 @@ gem "fog-aws"
 gem 'carrierwave', '~> 2.0'
 
 gem 'devise'
+
+ gem 'font-awesome-sass'
