@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   root "front#index"
   resources :items
+  resources :purchase, only: [:index, :new, :edit, :create, :update]
   resources :glances
   resources :detail
   get 'items/index'
