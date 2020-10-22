@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   get 'items/index'
   get 'glances/index'
   get 'detail/index'
-  get 'purchase/index'
 end
 
