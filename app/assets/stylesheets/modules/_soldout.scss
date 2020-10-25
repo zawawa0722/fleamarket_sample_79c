@@ -5,12 +5,12 @@
   border-right: 60px solid transparent;
   border-bottom: 60px solid transparent;
   border-left: 60px solid #ea352d;
-  z-index: 100;
+  z-index: 1;
   position: relative;
-  top: -323px;
+  top: -273px;
   &__inner {
     transform: rotate(-45deg);
-    font-size: 28px;
+    font-size: 25px;
     margin: -35px 0px 0px -55px;
     color: #fff;
     letter-spacing: 2px;

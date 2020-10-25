@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index, :new, :edit, :create, :update]
   resources :glances
   resources :detail
+  resources :complete
   get 'items/index'
   get 'glances/index'
   get 'detail/index'
+  get 'complete/index'
 end
 
