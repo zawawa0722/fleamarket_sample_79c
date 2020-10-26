@@ -2,10 +2,17 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, password_length: 7..128
   
-  validates :nickname, :nickname, :family_name, :first_name, :family_name_kana, 
-      :first_name_kana, :birthday, :zipcode, :prefectures, :city, :address, :building,
-      :address_name1,:address_name2, :phone, presence: true
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'に全角文字を使用してください' } do
+    validates :family_name
+    validates :first_name
+    validates :family_name_kana
+    validates :first_name_kana 
+  end
+  
+  validates :nickname, :birthday, presence: true
+  
+  
   has_one :address
 end
