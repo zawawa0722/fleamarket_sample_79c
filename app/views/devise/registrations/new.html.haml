@@ -3,20 +3,25 @@
     %h2 sign_up
     .container
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-        = render "devise/shared/error_messages", resource: @user
         .field_box
           .field_abel
             = f.label :ニックネーム 
             %span.form-require 必須
           .field-input
             = f.text_field :nickname
+            .input-error
+              = resource.errors.full_messages_for(:nickname)[0]
+
+            
         .field_box
           .field_abel
             = f.label :Eーメール
             %span.form-require 必須
             %br/
             = f.email_field :email
-        
+            .input-error
+              = resource.errors.full_messages_for(:email)[0]
+
         .field_box
           .field_abel
           = f.label :パスワード
@@ -26,37 +31,54 @@
               (#{@minimum_password_length} characters minimum)
           %br/
           = f.password_field :password, autocomplete: "off"
-        
+          .input-error
+            = resource.errors.full_messages_for(:password)[0]
+
         .field_box
           .field_abel
           = f.label :パスワード確認
           %span.form-require 必須
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
-          
+          .input-error
+            = resource.errors.full_messages_for(:password_confirmation)[0]
+
         .full_name
           .field
             = f.label :family_name
             %span.form-require 必須
             %br/
             = f.text_field :family_name
+            .input-error
+              = resource.errors.full_messages_for(:family_name)[0]
+
           .field
             = f.label :first_name_kana
             %span.form-require 必須
             %br/
-            = f.text_field :first_name_kana  
+            = f.text_field :first_name_kana
+            .input-error
+              = resource.errors.full_messages_for(:first_name_kana)[0]
 
         .full_name_kana
+          .field
+            = f.label :first_name
+            %span.form-require 必須
+            %br/
+            = f.text_field :first_name
+            .input-error
+              = resource.errors.full_messages_for(:first_name)[0]
+              
           .field
             = f.label :family_name_kana 
             %span.form-require 必須
             %br/
             = f.text_field :family_name_kana
-          .field
-            = f.label :first_name6
-            %span.form-require 必須
-            %br/
-            = f.text_field :first_name
+            .input-error
+              = resource.errors.full_messages_for(:family_name_kana)[0]
+
+          
+
         .field-label 
           = f.label '生年月日'
           %span.form-require 必須

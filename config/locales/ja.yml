@@ -1,0 +1,3 @@
+ja:
+  date:
+    order: [ !ruby/symbol year, !ruby/symbol month, !ruby/symbol day ]
