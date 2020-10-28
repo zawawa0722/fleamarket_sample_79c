@@ -103,7 +103,8 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      &__Box {
+
+      &__Box1 {
         height: 50px;
         width: 200px;
         background-color: #3ccace;
@@ -111,6 +112,17 @@
         border-style: none;
         border-radius: 5px;
         opacity: 1;
+        cursor: pointer;
+      }
+      &__Box2 {
+        height: 50px;
+        width: 200px;
+        background-color: #3ccace;
+        color: blue;
+        border-style: none;
+        border-radius: 5px;
+        opacity: 1;
+        cursor: pointer;
       }
     }
   }

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -8,13 +10,15 @@ Rails.application.routes.draw do
   end
   root "front#index"
   resources :items
-  resources :purchase, only: [:index, :new, :edit, :create, :update]
+  resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :glances
   resources :detail
   resources :complete
+  resources :card
   get 'items/index'
   get 'glances/index'
   get 'detail/index'
   get 'complete/index'
+  post 'card/new'
 end
 
