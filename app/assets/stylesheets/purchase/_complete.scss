@@ -33,9 +33,14 @@ $main-color: #3ccace;
       background-color: $main-color;
       padding: 5px;
       cursor: pointer;
+      transition: 1s;
     }
     & button:hover {
       background-color: lightblue;
+      transform: rotate(360deg);
+    }
+    & button:focus {
+      outline: 0;
     }
   }
 }
