@@ -38,11 +38,13 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -88,3 +90,16 @@ gem 'carrierwave', '~> 2.0'
 gem 'devise'
 
 gem 'mini_magick'
+
+gem 'font-awesome-sass'
+
+gem 'listen', '>= 3.0.5', '< 3.2'
+
+gem 'payjp'
+
+gem 'dotenv'
+
+gem 'devise-i18n'
+
+
+

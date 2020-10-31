@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+$main-color: #3ccace;
+
+.title {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-inner__content {
+  height: 100vh;
+  width: 100vw;
+  padding: 100px 200px;
+}
+
+.form-group {
+  height: auto;
+  width: auto;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.registration_font {
+  font-weight: bold;
+}
+
+.require-icon {
+  background-color: red;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.input-default {
+  display: block;
+  margin: 5px 0;
+  height: 60px;
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.card-png {
+  height: 100px;
+  width: 400px;
+}
+
+.payment_expiration_date_1i {
+  display: block;
+  margin: 5px 0;
+  height: 60px;
+  width: 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.payment_expiration_date_2i {
+  display: block;
+  margin: 5px 0;
+  height: 60px;
+  width: 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.expiration_date_box__wrap {
+  display: flex;
+  margin-right: 10px;
+}
+.expiration_date_box__text {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.submit-button {
+  height: 60px;
+  width: 400px;
+  background-color: $main-color;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.expiration_date_box {
+  display: flex;
+}
