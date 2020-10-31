@@ -117,9 +117,10 @@ p{
           height:100%;
           width:100%;
           padding:10px;
+          overflow:scroll;
           &__form{
             width:100%;
-            min-height:104px;
+            min-height:250px;
           }
           &__caution{
             font-size:16px;

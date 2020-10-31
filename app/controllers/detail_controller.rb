@@ -5,5 +5,7 @@ class DetailController < ApplicationController
   end
 
   def show
+    @images = @Item.item_images
   end
+
 end
