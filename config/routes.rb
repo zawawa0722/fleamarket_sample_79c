@@ -16,15 +16,12 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :glances
   resources :detail
-  resources :complete
-  resources :card
+  resources :complete, only: [:index]
+  resources :card, only: [:new, :create, :destory, :show]
   get 'items/index'
   get 'glances/index'
   get 'detail/index'
-  get 'complete/index'
-  post 'card/new'
-  get 'card/new'
-  get 'card/show'
+  
 
 end
 
