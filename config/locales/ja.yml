@@ -206,7 +206,6 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-=======
 ja:
   date:
     order: [ !ruby/symbol year, !ruby/symbol month, !ruby/symbol day ]
