@@ -14,7 +14,13 @@ ActiveRecord::Schema.define(version: 2020_10_26_123031) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zipcode"
-    t.text "address"
+    t.string "prefectures"
+    t.string "city"
+    t.string "address"
+    t.string "building"
+    t.string "address_name1"
+    t.string "address_name2"
+    t.string "phone"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -23,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_123031) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.string "customer_id"
-    t.string "card_id"
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
