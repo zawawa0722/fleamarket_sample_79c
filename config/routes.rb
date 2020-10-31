@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   root "front#index"
 
 
-  get "products/index"
   resources :products, except: :show
 
   resources :items
