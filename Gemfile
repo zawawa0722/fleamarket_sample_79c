@@ -89,6 +89,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'devise'
 
+gem 'mini_magick'
+
 gem 'font-awesome-sass'
 
 gem 'listen', '>= 3.0.5', '< 3.2'
@@ -98,5 +100,6 @@ gem 'payjp'
 gem 'dotenv'
 
 gem 'devise-i18n'
+
 
 

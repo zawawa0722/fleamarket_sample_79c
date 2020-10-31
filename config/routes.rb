@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root "front#index"
+
+
+  resources :products, except: :show
+
   resources :items
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :glances
@@ -21,5 +25,6 @@ Rails.application.routes.draw do
   post 'card/new'
   get 'card/new'
   get 'card/show'
+
 end
 
