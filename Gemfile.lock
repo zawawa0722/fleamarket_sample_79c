@@ -120,16 +120,12 @@ GEM
     dotenv (2.7.6)
     erubi (1.9.0)
     erubis (2.7.0)
-<<<<<<< Updated upstream
-    excon (0.76.0)
+    excon (0.78.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-=======
-    excon (0.78.0)
->>>>>>> Stashed changes
     ffi (1.13.1)
     fog-aws (3.6.7)
       fog-core (~> 2.1)
@@ -272,7 +268,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.4)
-<<<<<<< Updated upstream
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.3)
@@ -290,10 +285,7 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.4)
-    rubocop (0.92.0)
-=======
     rubocop (1.0.0)
->>>>>>> Stashed changes
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
