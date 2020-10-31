@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+$main-color: #3ccace;
+
+.Complete__Contents {
+  height: 100vh;
+  width: 100vw;
+  background-color: whitesmoke;
+  position: relative;
+
+  &__Box {
+    padding: 50px 80px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & h1 {
+      font-size: 50px;
+      font-weight: bold;
+      padding: 20px 0;
+    }
+    & h2 {
+      font-size: 30px;
+      padding-bottom: 50px;
+    }
+    & button {
+      height: 40px;
+      width: 200px;
+      border-style: none;
+      border-radius: 20px;
+      background-color: $main-color;
+      padding: 5px;
+      cursor: pointer;
+      transition: 1s;
+    }
+    & button:hover {
+      background-color: lightblue;
+      transform: rotate(360deg);
+    }
+    & button:focus {
+      outline: 0;
+    }
+  }
+}
+
+.logo-complete {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}

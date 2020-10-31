@@ -3,10 +3,14 @@
 @import "modules/front";
 @import "modules/items";
 @import "reset";
-@import "modules/purchase";
+@import "purchase/purchase";
 @import "information/sign_up";
 @import "information/_Log_in";
+@import "information/_address";
 @import "modules/detail";
 @import "modules/contents";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "purchase/complete";
+@import "modules/soldout";
+@import "purchase/card";
