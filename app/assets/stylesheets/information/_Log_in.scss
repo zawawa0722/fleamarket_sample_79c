@@ -1,12 +1,8 @@
-* {
-  box-sizing: border-box;
-}
+.input-full{
+  width: 380px;
+  height: 40px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: end;;
 
-@mixin square($w,$h) {
-  width: $w;
-  height: $h;
-}
-
-.input-error{
-  color: rgb(231, 94, 94);
 }
