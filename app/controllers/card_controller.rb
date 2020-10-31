@@ -2,12 +2,15 @@ class CardController < ApplicationController
 
   require "payjp"
 
+  def index
+  end
+  
   def new
-    #card = Card.where(user_id: current_user.id)
-    #redirect_to action: "show" if card.exists?
+    card = Card.where(user_id: current_user.id).first
+    redirect_to action: "show" if card.exists?
   end
 
-  def pay
+  def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -17,9 +20,9 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to purchase_index_path
       else
-        redirect_to action: "pay"
+        redirect_to action: "new"
       end
     end
   end
@@ -34,7 +37,7 @@ class CardController < ApplicationController
     end
       redirect_to action: "new"
   end
-
+  
   def show 
     card = Card.where(user_id: current_user.id).first
     if card.blank?
