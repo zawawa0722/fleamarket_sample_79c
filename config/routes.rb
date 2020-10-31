@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'card/new'
-  get 'card/show'
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -20,5 +19,7 @@ Rails.application.routes.draw do
   get 'detail/index'
   get 'complete/index'
   post 'card/new'
+  get 'card/new'
+  get 'card/show'
 end
 

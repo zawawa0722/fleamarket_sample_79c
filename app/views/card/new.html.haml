@@ -1,12 +1,12 @@
-= form_tag("/payments", method: :post, id: 'charge-form') do
+= form_with model: @card, id: "cardCreateForm" do |f|
   %span.charge-errors
   .register-inner__content
-
+    %h1.title カード情報を入力してください
     .form-group
       .form-group__box
         %span.registration_font カード番号
         %span.require-icon 必須
-      %input.number.input-default{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
+      = f.text_field :card_number, maxlength: "16", placeholder: "半角数字のみ", type: "text", id: "card-number", class: "input-default"
       = image_tag "credit-cards-top5-brand.jpg", class:"card-png"
 
     .form-group
@@ -15,7 +15,7 @@
         %span.require-icon 必須
       .expiration_date_box
         .expiration_date_box__wrap
-          %select.exp_month#payment_expiration_date_1i{maxlength: "2", name: "exp_month", type: "text"}
+          = f.select :exp_month, class: "payment_expiration_date_1i", name: "exp_month"
             %option{value: "1"}01
             %option{value: "2"}02
             %option{value: "3"}03
@@ -31,7 +31,7 @@
           %text.expiration_date_box__text 月
 
         .expiration_date_box__wrap
-          %select.exp_year#payment_expiration_date_2i{maxlength: "4", name: "exp_year", type: "text"}
+          =f.select :exp_year, class: "payment_expiration_date_2i", name: "exp_year"
             %option{value: "2019"}19
             %option{value: "2020"}20
             %option{value: "2021"}21
@@ -49,6 +49,6 @@
       .form-group__box
         %span.registration_font セキュリティー番号
         %span.require-icon 必須
-      %input.cvc.input-default{maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"}
+      = f.text_field :cvc, class: "input-default", maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"
       .actions
-        %button.register-member#submit-button{type: "submit"} 登録完了
+        = f.submit "登録する", class: "submit-button", type: "submit", id: 'token_submit'

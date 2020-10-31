@@ -13,8 +13,9 @@
       .Content__Main__Payment
         .Content__Main__Payment__Text 支払い方法
         .Content__Main__Payment__Choise
-          %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
-            カード情報を入力する
+          = link_to new_card_path, target: "_blank" do
+            %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
+              カード情報を入力する
       .Content__Main__User-infomation
         .Content__Main__User-infomation__Box
           .Content__Main__User-infomation__Delivery-address  配送先
