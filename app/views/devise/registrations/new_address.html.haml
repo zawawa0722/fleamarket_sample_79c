@@ -1,59 +1,67 @@
-%h2 住所情報登録
+.upper-field__in__main  
+  %h1.upper-field__in__main__logo
+    %a(href="/")
+      = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
+.title 
+  .title_header
+    %h1 住所情報登録
 = form_for @address do |f|
-  .field
-    = f.label :郵便番号
-    %br/
-    = f.text_field :zipcode
-  .input-error
-    = @address.errors.full_messages_for(:zipcode)[0]
-  
-  .field
-    = f.label :都道府県
-    %br/
-    = f.text_field :prefectures
-  .input-error
-    = @address.errors.full_messages_for(:prefectures)[0]
-    
-  .field
-    = f.label :市区町村
-    %br/
-    = f.text_field :city
-  .input-error
-    = @address.errors.full_messages_for(:city)[0]
-  
-  .field
-    = f.label :番地
-    %br/
-    = f.text_field :address
-  .input-error
-    = @address.errors.full_messages_for(:address)[0]
-  
-  .field
-    = f.label :建物
-    %br/
-    = f.text_field :building
-
-  .field
-    = f.label :送付先名（姓）
-    %br/
-    = f.text_field :address_name1
-  .input-error
-    = @address.errors.full_messages_for(:address_name1)[0]
-   
-  .field
-    = f.label :送付先（名）
-    %br/
-    = f.text_field :address_name2
-  .input-error
-    = @address.errors.full_messages_for(:address_name2)[0]
-    
-  .field
-    = f.label :連絡先
-    %br/
-    = f.text_field :phone
-  .input-error
-    = @address.errors.full_messages_for(:phone)[0]
+  .title_field  
+    .title_field_box
+      .title_field_box_label
+        = f.label :郵便番号
+        %span.indispensable 必須
+      .title_field_input
+        = f.text_field :zipcode, class: "field-input"
+        .input-error
+          = @address.errors.full_messages_for(:zipcode)[0]
+    .title_field_box
+      .title_field_box_label
+        = f.label :都道府県
+        %span.indispensable 必須
+      .title_field_input 
+        = f.text_field :prefectures, class: "field-input"
+        .input-error
+          = @address.errors.full_messages_for(:prefectures)[0]
+    .title_field_box
+      .title_field_box_label
+        = f.label :市区町村
+        %span.indispensable 必須
+      .title_field_input 
+        = f.text_field :city, class: "field-input"
+        .input-error
+          = @address.errors.full_messages_for(:city)[0]
+    .title_field_box
+      .title_field_box_label
+        = f.label :番地
+      .title_field_input 
+        = f.text_field :address, class: "field-input"
+    .title_field_box
+      .title_field_box_label    
+        = f.label :建物
+        %br/
+      .title_field_input 
+        = f.text_field :building,class: "field-input"
+    .title_field_box 
+      .title_field_box_label
+        = f.label :送付先名
+        %span.indispensable 必須
+      .title_field_input 
+        = f.text_field :address_name1,class: "field-input-full", placeholder: "姓"
+        .input-error
+          = @address.errors.full_messages_for(:address_name1)[0]
+      .input-error_kana 
+        = f.text_field :address_name2,class:"field-input-full", placeholder: "名"
+        = @address.errors.full_messages_for(:address_name2)[0]
+    .title_field_box      
+      .title_field_box_label
+        = f.label :連絡先
+        %span.indispensable 必須
+      .title_field_input
+        = f.text_field :phone, class: "field-input"
+        .input-error
+          = @address.errors.full_messages_for(:phone)[0]
   
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "Sign up",class:"btn"
+//= render "devise/shared/links"

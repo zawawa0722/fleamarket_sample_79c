@@ -6,25 +6,26 @@ ja:
           attributes:
             nickname:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
             family_name:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
+            first_name:  
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
             family_name_kana:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
             first_name_kana:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
             birthday:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
             
             email:
               taken: "は既に使用されています。"
-              blank: "が入力されていません。"
+              blank: "を入力して下さい。"
               too_short: "は%{count}文字以上に設定して下さい。"
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
@@ -37,11 +38,11 @@ ja:
               confirmation: "が内容とあっていません。"
             password_confirmation:
               taken: "は既に使用されています。"
-              blank: "を入力して下さい"
+              blank: "を入力して下さい。"
               too_short: "は%{count}文字以上に設定して下さい。"
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
-              confirmation: "がパスワードとあっていません。"
+              confirmation: "が合っていません。"
         address:
           attributes:
             zipcode:
@@ -64,27 +65,27 @@ ja:
               invalid: "を正しく入力して下さい"
     attributes:
       user:
-        nickname: "ニックネーム"
-        family_name: "氏名"
-        first_name: "名前"
-        family_name_kana: "フリガナ"
-        first_name_kana: "フリガナ"
-        birthday: "生年月日"
-        current_password: "現在のパスワード"
-        name: 名前
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "確認用パスワード"
-        remember_me: "次回から自動的にログイン"
+        nickname: ※ニックネーム
+        family_name: ※姓
+        first_name: ※名
+        family_name_kana: ※セイ
+        first_name_kana: ※ナ
+        birthday: ※生年月日
+        current_password: 現在のパスワード
+        name: ※名前
+        email: ※メールアドレス
+        password: ※パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン
       address:
-        zipcode: 郵便番号
-        prefectures: "都道府県"
-        city: "市区町村"
-        address: "番地"
-        building: "建物名"
-        address_name1: "送付先（姓）"
-        address_name2: "送付先（名）"
-        phone: "連絡先"
+        zipcode: ※郵便番号
+        prefectures: ※都道府県
+        city: ※市区町村
+        address: 番地
+        building: 建物名
+        address_name1: ※姓
+        address_name2: ※名
+        phone: ※連絡先
     models:
       user: "ユーザー"
   devise:
