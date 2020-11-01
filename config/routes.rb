@@ -10,22 +10,21 @@ Rails.application.routes.draw do
   root "front#index"
 
 
+  resources :front do
+    member do
+      get 'products'
+    end
+  end
   resources :products, except: :show
-
-  resources :items
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :users, only: :show
   resources :glances
   resources :detail
-  resources :complete
-  resources :card
-  get 'items/index'
+  resources :complete, only: [:index]
+  resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
   get 'detail/index'
-  get 'complete/index'
-  post 'card/new'
-  get 'card/new'
-  get 'card/show'
+  
 
 end
 
