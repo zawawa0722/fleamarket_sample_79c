@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
+  resources :users, only: :show
   resources :glances
   resources :detail
   resources :complete

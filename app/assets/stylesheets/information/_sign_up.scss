@@ -30,19 +30,11 @@
     border-right: groove 5px rgb(180, 177, 177);
     border-bottom: groove 5px rgb(180, 177, 177);
     //background-color: rgb(51, 50, 50);
-      &_box{
+    &_box{
       width: 600px;
       height: 60px;
       margin: 50px 50px;
       display: flex;
-      &_label{
-        font-size: 16px;
-        width: 500px;
-        display: flex;
-        justify-content: space-between;
-        //align-items: initial;
-        //margin: 0 0 0 10px;
-      }
     }
   }
 }
