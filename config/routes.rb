@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "front#index"
   resources :items
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
+  resources :users, only: :show
   resources :glances
   resources :detail
   resources :complete
