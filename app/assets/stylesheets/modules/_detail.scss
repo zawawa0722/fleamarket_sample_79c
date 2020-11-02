@@ -97,16 +97,6 @@ p{
             }
           }
         }
-        &__option-area{
-          height:50px;
-          width:80%;
-          margin:10px auto 0;
-          display:flex;
-          justify-content:space-between;
-          &__icon{
-            padding:6px 10px;
-          }
-        }
       }
       &__comment-box{
         background-color:#fff;
@@ -130,52 +120,57 @@ p{
             text-align:left;
           }
         }
-        &__btn{
-          display:inline-block;
-          height:74px;
-          width: 200px;
-          color:lightslategray;
-          font-weight:700;
-          background-color:white;
-          font-size:12px;
-          text-transform:uppercase;
-          letter-spacing:1px;
-          transition:ease-in-out 0.25s;
-          span{
+        .Bottom{
+          display:flex;
+          justify-content:space-between;
+          text-align:center;
+          &__btn{
+            display:inline-block;
+            height:74px;
+            width: 200px;
+            color:lightslategray;
+            font-weight:700;
+            background-color:white;
+            font-size:12px;
+            text-transform:uppercase;
+            letter-spacing:1px;
             transition:ease-in-out 0.25s;
+            span{
+              transition:ease-in-out 0.25s;
+            }
           }
-        }
-        btn:hover{
-          background-color:#36c2e0;
-          color:white;
-          span{
-            padding-left:10px;
+          btn:hover{
+            background-color:#36c2e0;
             color:white;
+            span{
+              padding-left:10px;
+              color:white;
+            }
           }
         }
-      }
-      &__links{
-        height:24px;
-        width:700px;
-        margin:0 auto;
-        display:flex;
-        justify-content:space-between;
-        &__link{
-          font-size:18px;
+        &__links{
+          height:24px;
+          width:700px;
+          margin:0 auto;
+          display:flex;
+          justify-content:space-between;
+          &__link{
+            font-size:18px;
+          }
         }
-      }
-      &__box{
-        height:320px;
-        width: 780px;
-        margin: 26px auto;
-        display: flex;
-        justify-content: space-around;
-        &__list{
-          width: 220px;
-          background-color: #fff;
-        }
-        &_list img{
-          text-align: center;
+        &__box{
+          height:320px;
+          width: 780px;
+          margin: 26px auto;
+          display: flex;
+          justify-content: space-around;
+          &__list{
+            width: 220px;
+            background-color: #fff;
+          }
+          &_list img{
+            text-align: center;
+          }
         }
       }
     }
