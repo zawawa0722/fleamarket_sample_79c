@@ -1,1 +1,10 @@
-完成
+.Complete__Contents
+  = link_to '/' do
+    = image_tag 'logo.png', alt: ',ロゴ', height: '50px', width: '170px', class: 'logo-complete'
+  .Complete__Contents__Box
+    %h1 出品が完了しました！
+    %h2 売れるといいね!
+    = link_to "/" do
+      %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
+        トップページへ戻る
+        = icon('fas', 'door-open', class: 'door-icon')

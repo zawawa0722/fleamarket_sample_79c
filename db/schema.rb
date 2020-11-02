@@ -72,9 +72,11 @@ ActiveRecord::Schema.define(version: 2020_10_28_000040) do
     t.integer "shipping_type", null: false
     t.integer "shipping_fee", null: false
     t.integer "trading_status", null: false
+    t.bigint "buyer_id"
     t.timestamp "deal_closed_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_products_on_buyer_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -157,5 +157,6 @@
             .Main__right__ThirdContent__ShippingDay__Right
               = f.select :shipping_day, Product.shipping_days.keys,{prompt:"---"}, id: "select_status", class: "select_line"
   .Bottom
-    = f.submit '確認', id:"button"
-      
+    %button{:type => "submit"}
+      確認
+      %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}

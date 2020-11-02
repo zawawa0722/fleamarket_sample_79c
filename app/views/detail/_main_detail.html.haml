@@ -43,17 +43,6 @@
               %th
                 発送日
               %td
-        .main__show__contents__item-box__option-area
-          %ul.main__show__contents__item-box__option-area__icon
-            %li.main__show__contents__item-box__option-area__icon__star
-              = link_to "#" do
-                = icon('far', 'star')
-                %p お気に入り
-          %ul.main__show__contents__item-box__option-area__icon
-            %li.main__show__contents__item-box__option-area__icon__thumbs-up
-              = link_to "#" do
-                = icon('fa', 'thumbs-up')
-                %p グッド
       .main__show__contents__comment-box
         .main__show__contents__comment-box__field
           %textarea.main__show__contents__comment-box__field__form
@@ -62,9 +51,15 @@
             %br
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .Bottom
-            %button{:type => "submit"}
-              コメントする
-            %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
+            = link_to purchase_index_path do
+              %button{:type => "submit"}
+                購入画面へ
+            = link_to glances_index_path do
+              %button{:type => "submit"}
+                出品一覧へ
+            = link_to '#' do
+              %button{:type => "submit"}
+                コメントする
       %ul.main__show__contents__links
         %li.main__show__contents__links__link 
           = link_to "#" do
