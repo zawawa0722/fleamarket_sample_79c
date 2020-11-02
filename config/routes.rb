@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post 'card/new'
   get 'card/new'
   get 'card/show'
+  get 'products/new'
 
 end
 
