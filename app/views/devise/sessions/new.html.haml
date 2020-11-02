@@ -2,29 +2,23 @@
   %h1.upper-field__in__main__logo
     %a(href="/")
       = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
-.title 
-  .title_header
-    %h1 login
 = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
-  .title_field  
+  .head_title
+    %h1 login
+  .field_type 
     .title_field_box
-      .title_field_box_label
-        = f.label 'メールアドレス'
-        %span.indispensable 必須
-      .title_field_input
-        = f.email_field :email, class: "input-full", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
-        .input-error
-          = resource.errors.full_messages_for(:email)[0]
-
+      = f.label 'メールアドレス'
+      %span.indispensable 必須
+      = f.email_field :email, class: "input-full", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+    .input_errors
+      = resource.errors.full_messages_for(:email)[0]
     .title_field_box
-      .title_field_box_label
-        = f.label :password, 'パスワード'
-        %span.indispensable 必須
-      .field_input
-        = f.password_field :password, class: "input-full", autocomplete: "off", autocomplete: "password", placeholder: "7文字以上の半角英数字", id:'password'
-        .input-error
-          = resource.errors.full_messages_for(:password)[0]
+      = f.label :password, 'パスワード'
+      %span.indispensable 必須
+      = f.password_field :password, class: "input-full", autocomplete: "off", autocomplete: "password", placeholder: "7文字以上の半角英数字", id:'password'
+    .input_errors
+      = resource.errors.full_messages_for(:password)[0]
         
-    .actions
+    .actions_login
       = f.submit "ログイン",class:"btn"
 

@@ -3,72 +3,66 @@
     %a(href="/")
       = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-  .title 
-    .title_header
-      %h1 会 員 登 録
-    .title_field  
-      .title_field_box
-        = f.label :ニックネーム 
-        %span.indispensable 必須
+  .head_title
+    %h1 会員登録
+  .title_field  
+    .title_field_box
+      = f.label :ニックネーム 
+      %span.indispensable 必須
       = f.text_field :nickname, class: "field-input"
-      .input-error
-        = resource.errors.full_messages_for(:nickname)[0]  
-    .title_field
-      .title_field_box
-        = f.label :メールアドレス
-        %span.indispensable 必須
+    .input_errors
+      = resource.errors.full_messages_for(:nickname)[0]  
+  .title_field
+    .title_field_box
+      = f.label :メールアドレス
+      %span.indispensable 必須
       = f.email_field :email, class: "field-input"
-      .input-error
-        = resource.errors.full_messages_for(:email)[0]
-    .title_field
-      .title_field_box
-        = f.label :パスワード
-        %span.indispensable 必須
-        - if @minimum_password_length
-          %em
-          //(#{@minimum_password_length} characters minimum)
-        = f.password_field :password, class: "field-input", autocomplete: "off"
-        .input-error
-          = resource.errors.full_messages_for(:password)[0]
-    .title_field
-      .title_field_box_
-        = f.label :パスワード確認用
-        %span.indispensable 必須
-        = f.password_field :password_confirmation, class: "field-input", autocomplete: "off"
-        .input-error
-          = resource.errors.full_messages_for(:password_confirmation)[0]
-    .title_field 
-      .title_field_box
-        = f.label :氏名
-        %span.indispensable 必須
-      .input_name
-        = f.text_field :family_name,class: "field-input-full", placeholder: "姓"
-        .input-error
-          = resource.errors.full_messages_for(:family_name)[0]
-        = f.text_field :first_name,class: "field-input-full", placeholder: "名"
-        .input-error  
-          = resource.errors.full_messages_for(:first_name)[0]
-      .title_field_box 
-        .title_field_box_label
-          = f.label :フリガナ
-          %span.indispensable 必須
-        .input_name_kana   
-          = f.text_field :family_name_kana, class: "field-input-full", placeholder: "セイ"
-          .input-error
-            = resource.errors.full_messages_for(:family_name_kana)[0]
-          = f.text_field :first_name_kana, class: "field-input-full", placeholder: "ナ"
-          .input-error      
-            = resource.errors.full_messages_for(:first_name_kana)[0] 
-      .title_field_box      
-        .title_field_box_label 
-          = f.label '生年月日'
-          %span.indispensable 必須
-        .birthday-select
-          = raw sprintf(f.date_select( :birthday, use_two_digit_numbers: true, prompt: "--", start_year: Time.now.year, end_year: 1900, date_separator: '%s'), '年 ', '月 ') + "日"
-          .input-error_date
-            = resource.errors.full_messages_for(:birthday)[0]
-      .actions
-        = f.submit "Next",class:"btn"
-        //= render "devise/shared/links"
+    .input_errors
+      = resource.errors.full_messages_for(:email)[0]
+  .field_type
+    .title_field_box
+      = f.label :パスワード
+      %span.indispensable 必須
+      - if @minimum_password_length
+        %em
+        //(#{@minimum_password_length} characters minimum)
+      = f.password_field :password, class: "field-input", autocomplete: "off"
+    .input_errors
+      = resource.errors.full_messages_for(:password)[0]
+
+    .title_field_box
+      = f.label :パスワード確認用
+      %span.indispensable 必須
+      = f.password_field :password_confirmation, class: "field-input", autocomplete: "off"
+    .input_errors
+      = resource.errors.full_messages_for(:password_confirmation)[0]
+  .field_type 
+    .title_field_box
+      = f.label :氏名
+      %span.indispensable 必須
+      = f.text_field :family_name,class: "field-input-full", placeholder: "姓"
+      = f.text_field :first_name,class: "field-input-full", placeholder: "名"
+    .input_errors
+      = resource.errors.full_messages_for(:family_name)[0]
+      = resource.errors.full_messages_for(:first_name)[0]
+    .title_field_box
+      = f.label :フリガナ
+      %span.indispensable 必須
+      = f.text_field :family_name_kana, class: "field-input-full", placeholder: "セイ"
+      = f.text_field :first_name_kana, class: "field-input-full", placeholder: "ナ"
+    .input_errors
+      = resource.errors.full_messages_for(:family_name_kana)[0]
+      = resource.errors.full_messages_for(:first_name_kana)[0] 
+  .title_field     
+    .title_field_box
+      = f.label :生年月日
+      %span.indispensable 必須
+      .birthday-select
+        = raw sprintf(f.date_select( :birthday, use_two_digit_numbers: true, prompt: "--", start_year: Time.now.year, end_year: 1900, date_separator: '%s'), '年 ', '月 ') + "日"
+    .input_errors
+      = resource.errors.full_messages_for(:birthday)[0]
+  .actions
+    = f.submit "Next",class:"btn"
+    //= render "devise/shared/links"
 
 
