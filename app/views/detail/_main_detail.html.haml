@@ -51,12 +51,12 @@
             %br
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .Bottom
-            = link_to purchase_index_path do
-              %button{:type => "submit"}
-                購入画面へ
             = link_to glances_index_path do
               %button{:type => "submit"}
-                出品一覧へ
+                商品一覧へ
+            = link_to purchase_index_path do
+              %button{:type => "submit"}
+                購入確認へ
             = link_to '#' do
               %button{:type => "submit"}
                 コメントする
