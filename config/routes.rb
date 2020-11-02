@@ -25,7 +25,12 @@ Rails.application.routes.draw do
   resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
   get 'detail/index'
-  
+  get 'complete/index'
+  post 'card/new'
+  get 'card/new'
+  get 'card/show'
+  get 'products/new'
+
 
 end
 
