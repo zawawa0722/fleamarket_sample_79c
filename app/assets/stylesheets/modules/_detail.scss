@@ -97,6 +97,7 @@ p{
             }
           }
         }
+        
         &__option-area{
           height:50px;
           width:80%;
@@ -130,27 +131,32 @@ p{
             text-align:left;
           }
         }
-        &__btn{
-          display:inline-block;
-          height:74px;
-          width: 200px;
-          color:lightslategray;
-          font-weight:700;
-          background-color:white;
-          font-size:12px;
-          text-transform:uppercase;
-          letter-spacing:1px;
-          transition:ease-in-out 0.25s;
-          span{
+        .Bottom{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          &__btn{
+            display:inline-block;
+            height:74px;
+            width: 200px;
+            color:lightslategray;
+            font-weight:700;
+            background-color:white;
+            font-size:12px;
+            text-transform:uppercase;
+            letter-spacing:1px;
             transition:ease-in-out 0.25s;
+            span{
+              transition:ease-in-out 0.25s;
+            }
           }
-        }
-        btn:hover{
-          background-color:#36c2e0;
-          color:white;
-          span{
-            padding-left:10px;
+          btn:hover{
+            background-color:#36c2e0;
             color:white;
+            span{
+              padding-left:10px;
+              color:white;
+            }
           }
         }
       }
