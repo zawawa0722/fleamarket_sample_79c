@@ -8,18 +8,29 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root "front#index"
-  resources :items
+
+  resources :front do
+    member do
+      get 'products'
+    end
+  end
+  resources :products, except: :show
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
+  resources :users, only: :show
   resources :glances
-  resources :detail
-  resources :complete
-  resources :card
-  get 'items/index'
+  resources :detail do
+    resources :comments
+  end
+  resources :complete, only: [:index]
+  resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
   get 'detail/index'
   get 'complete/index'
   post 'card/new'
   get 'card/new'
   get 'card/show'
+  get 'products/new'
+
+
 end
 

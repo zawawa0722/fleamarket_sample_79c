@@ -1,0 +1,21 @@
+.container
+  .error404page
+    .newcharacter404
+      .chair404
+      .leftshoe404
+      .rightshoe404
+      .legs404
+      .torso404
+        .body404
+        .leftarm404
+        .rightarm404
+        .head404
+          .eyes404
+      .laptop404
+-if model.errors.any? 
+  .alert
+    %ul
+      .product-form__errors__count= "#{@product.errors.full_messages.count}件のエラーが発生しました"
+      -model.errors.full_messages.each do |message| 
+        %li= message
+        
