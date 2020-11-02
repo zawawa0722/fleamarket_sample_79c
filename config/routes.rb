@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
   root "front#index"
 
-
   resources :front do
     member do
       get 'products'
@@ -19,7 +18,9 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :users, only: :show
   resources :glances
-  resources :detail
+  resources :detail do
+    resources :comments
+  end
   resources :complete, only: [:index]
   resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
