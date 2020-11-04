@@ -16,7 +16,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :shipping_fee, null: false 
       t.integer :trading_status, null: false
       ##t.references :seller, null: false , foreign_key: { to_table: :users }
-      ##t.references :buyer, foreign_key: { to_table: :users }
+      t.references :buyer, foreign_key: { to_table: :users }
       t.timestamp :deal_closed_date
 
       t.timestamps
