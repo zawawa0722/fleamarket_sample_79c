@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
   root "front#index"
 
-
   resources :products, except: :show
 
   resources :items
