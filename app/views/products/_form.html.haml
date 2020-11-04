@@ -9,11 +9,12 @@
         #image-box
           = f.fields_for :images do |image|
             .LeftContents__FirstContent{id:"FirstContent_nil0"}
-              .LeftContents__FirstContent__img
+              .LeftContents__FirstContent__img{"data-index": 0}
                 = image_tag src="first_image.png",id: "img0"
                 %label.LeftContents__FirstContent__img__choose
                   ファイルを選択
                   = image.file_field :image , id: "images_attributes_0_image"
+                  
             %ul.LeftContents__SecondContent
               %li.LeftContents__SecondContent__Left{id:"SecondContent_nil1"}
                 .LeftContents__SecondContent__Left__img

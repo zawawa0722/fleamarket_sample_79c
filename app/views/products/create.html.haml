@@ -4,6 +4,10 @@
   .Complete__Contents__Box
     %h1 出品が完了しました！
     %h2 売れるといいね!
+    = link_to "edit" do
+      %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
+        編集画面へ
+        = icon('fas', 'door-open', class: 'door-icon')
     = link_to "/" do
       %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
         トップページへ戻る
