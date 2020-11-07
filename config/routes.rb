@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   get 'products/new'
+  get 'products/create'
 
 
 end
