@@ -15,13 +15,8 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :shipping_type, null: false 
       t.integer :shipping_fee, null: false 
       t.integer :trading_status, null: false
-<<<<<<< Updated upstream
-      ##t.references :seller, null: false , foreign_key: { to_table: :users }
-      t.references :buyer, foreign_key: { to_table: :users }
-=======
       t.references :user, foreign_key: true
-      ##t.references :buyer, foreign_key: { to_table: :users }
->>>>>>> Stashed changes
+      
       t.timestamp :deal_closed_date
 
       t.timestamps

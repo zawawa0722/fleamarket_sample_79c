@@ -515,7 +515,7 @@
       %li.upper-field__navigate__right-side__register
         - if user_signed_in?
           .upper-field__navigate__right-side__login.grid-6
-            = button_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           .grid-6
             = link_to "ログイン", new_user_session_path, class: "post"
