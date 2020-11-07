@@ -1,13 +1,15 @@
 $(function() {
   $('#cardCreateForm').on('submit', function(e) {
     e.preventDefault()
-    Payjp.setPublicKey(['pk_test_94ce8c98bfdbf3ebe7d41251']);
+    
+    Payjp.setPublicKey([PAYJP_PUBLIC_KEY]);
     var card = {
       number: document.getElementById("card-number").value,
-      exp_month: document.getElementById("credit_exp_month").value,
-      exp_year: document.getElementById("credit_exp_year").value,
+      exp_month: document.getElementById("exp_month").value,
+      exp_year: document.getElementById("exp_year").value,
       cvc: document.getElementById("cvc").value
     };
+    console.log(card)
     if (card.number == "" || card.cvc == "") {
       alert("入力もれがあります");
     } else {
