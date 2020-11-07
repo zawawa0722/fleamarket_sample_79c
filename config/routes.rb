@@ -17,20 +17,15 @@ Rails.application.routes.draw do
   resources :products, except: :show
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :users, only: :show
-  resources :glances
   resources :detail do
     resources :comments
   end
   resources :complete, only: [:index]
-  resources :card, only: [:new, :create, :destory, :show]
+  resources :card, only: [:new, :create, :destory, :show, :index]
   get 'glances/index'
   get 'detail/index'
-  get 'complete/index'
-  post 'card/new'
-  get 'card/new'
-  get 'card/show'
   get 'products/new'
-
+  post 'card/new'
 
 end
 
