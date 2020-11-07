@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :detail
   resources :comments
-
+  resources :products, only: :create
   resources :complete, only: [:index]
   resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'

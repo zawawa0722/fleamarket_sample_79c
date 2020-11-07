@@ -4,7 +4,6 @@ class CreateCards < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.string :customer_id, null:false
       t.string :card_id, null:false
-
       t.timestamps
     end
   end
