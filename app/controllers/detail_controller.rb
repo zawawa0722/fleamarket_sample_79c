@@ -1,11 +1,11 @@
 class DetailController < ApplicationController
 
   def index
-    @items = Item.all
+    @products = Product.includes(:images).order('created_at DESC').where.not(trading_status: 0)
   end
 
   def show
-    @images = @Item.item_images
+    
   end
 
 end

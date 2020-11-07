@@ -1,4 +1,5 @@
-.container
+-if model.errors.any? 
+  .container
   .error404page
     .newcharacter404
       .chair404
@@ -12,7 +13,6 @@
         .head404
           .eyes404
       .laptop404
--if model.errors.any? 
   .alert
     %ul
       .product-form__errors__count= "#{@product.errors.full_messages.count}件のエラーが発生しました"
