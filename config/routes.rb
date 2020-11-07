@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :users, only: :show
   resources :glances
-  resources :detail do
-    resources :comments
-  end
+  resources :detail
+  resources :comments
   resources :complete, only: [:index]
   resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
   get 'detail/index'
+  get 'comments/index'
   get 'complete/index'
   post 'card/new'
   get 'card/new'
