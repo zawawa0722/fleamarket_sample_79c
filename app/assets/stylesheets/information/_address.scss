@@ -1,0 +1,12 @@
+.field_type1{
+  width:680px;
+  height:400px;
+  @include square;
+}
+
+.field-input1{
+  width: 380px;
+  height: 40px;
+  margin-left: 68px;
+  display: inline-block;
+}

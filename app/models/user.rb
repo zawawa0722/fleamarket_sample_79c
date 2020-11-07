@@ -13,7 +13,6 @@ class User < ApplicationRecord
   
   validates :nickname, :birthday, presence: true
   
-  has_many :comments
   has_one :address
   has_many :card
   has_many :comments

@@ -1,0 +1,175 @@
+= form_with(class: "Main_Container", model: @product, local: true) do |f|
+  .Wrapper
+    .Top
+      %h2 編集
+      %p 商品情報を編集してください
+
+    .WrapperContents
+
+      .LeftContents
+        #image-box
+          #previews
+          #image-box
+          = f.fields_for :images do |image|
+            .LeftContents__FirstContent{id:"FirstContent_nil0"}
+              .LeftContents__FirstContent__img{"data-index": 0}
+                = image_tag src="first_image.png",id: "img0"
+                %label.LeftContents__FirstContent__img__choose
+                  ファイルを選択
+                  = image.file_field :image , id: "images_attributes_0_image"
+                  
+            %ul.LeftContents__SecondContent
+              %li.LeftContents__SecondContent__Left{id:"SecondContent_nil1"}
+                .LeftContents__SecondContent__Left__img
+                  = image_tag src="icon_image.png",id: "img1"
+                  %label.LeftContents__SecondContent__Center__img__choose
+                    ファイルを選択
+                    = image.file_field :image ,id: "images_attributes_1_image"
+              
+              %li.LeftContents__SecondContent__Center{id:"SecondContent_nil2"}
+                .LeftContents__SecondContent__Center__img
+                  = image_tag src="icon_image.png",id: "img2"
+                  %label.LeftContents__SecondContent__Center__img__choose
+                    ファイルを選択
+                    = image.file_field :image ,id: "images_attributes_2_image"
+              %li.LeftContents__SecondContent__Right{id:"SecondContent_nil3"}
+                .LeftContents__SecondContent__Right__img
+                  = image_tag src="icon_image.png",id: "img3"
+                  %label.LeftContents__SecondContent__Center__img__choose
+                    ファイルを選択
+                    = image.file_field :image ,id: "images_attributes_3_image"
+
+              .js-file_group{"data-index" => "#{image.index}"}
+                = image.file_field :image, class: 'js-file', id:"images_attributes_#{image.index}_image"
+                %br/
+                %span.js-remove 削除
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+
+        .LeftContents__ThirdContent
+          .LeftContents__ThirdContent__Top
+            .LeftContents__ThirdContent__Top__Left
+              %h2 商品価格(必須)
+            .LeftContents__ThirdContent__Top__Center
+              = f.number_field :price,placeholder: "300~50,000"
+            .LeftContents__ThirdContent__Top__Right
+              %p 円
+
+
+          .LeftContents__ThirdContent__Bottom
+            .LeftContents__ThirdContent__Bottom__Left
+              .LeftContents__ThirdContent__Bottom__Left__One
+                %p 決済手数料 
+              .LeftContents__ThirdContent__Bottom__Left__Two
+                %p 0
+              .LeftContents__ThirdContent__Bottom__Left__Three
+                %p 円
+            .LeftContents__ThirdContent__Bottom__Right
+              .LeftContents__ThirdContent__Bottom__Right__One
+                %p 付与予定売上
+              .LeftContents__ThirdContent__Bottom__Right__Two
+                %p 0
+              .LeftContents__ThirdContent__Bottom__Right__Three
+                %p 円
+
+
+
+        .LeftContents__FourthContent
+          .LeftContents__FourthContent__Top
+            %p その他オプション
+          .LeftContents__FourthContent__MiddleBox
+            .LeftContents__FourthContent__MiddleBox__Price
+              .LeftContents__FourthContent__MiddleBox__Price__Left
+                %p 価格設定
+              .LeftContents__FourthContent__MiddleBox__Price__Right
+                .mid
+                  %label.rocker.rocker-small
+                    %input{:type => "checkbox"}/
+                    %span.switch-left Yes
+                    %span.switch-right No
+                  .mid__name
+                    %p 価格未設定にする
+            .LeftContents__FourthContent__MiddleBox__Amount
+              .LeftContents__FourthContent__MiddleBox__Amount__Left
+                %p 数量
+              .LeftContents__FourthContent__MiddleBox__Amount__Right
+                .mid
+                  %label.rocker.rocker-small
+                    %input{:type => "checkbox"}/
+                    %span.switch-left Yes
+                    %span.switch-right No
+                  .mid__name
+                    %p 同じ商品を複数出品する
+            .LeftContents__FourthContent__MiddleBox__Personal
+              .LeftContents__FourthContent__MiddleBox__Personal__Left
+                %p 専用出品
+              .LeftContents__FourthContent__MiddleBox__Personal__Right
+                取引相手を選択する
+
+
+          .LeftContents__FourthContent__Bottom
+            %p その他のオプションガイド
+
+
+      .Main__right
+        .Main__right__FirstContent
+          .Main__right__FirstContent__Left
+            %p 商品名(必須)
+          .Main__right__FirstContent__Right
+            = f.text_field :product_name,placeholder: "30文字以内で入力",class: "Main__right__FirstContent__Right__input"
+        .Main__right__SecondContent
+          .Main__right__SecondContent__Left
+            %p 商品説明(必須)
+          .Main__right__SecondContent__Right
+            = f.text_area :description,placeholder: "2048文字以内で入力",class: "Main__right__SecondContent__Right__input" 
+        .Main__right__ThirdContent
+          .Main__right__ThirdContent__Category
+            .Main__right__ThirdContent__Category__Left
+              %p カテゴリー(必須)
+            .Main__right__ThirdContent__Category__Right
+              = f.text_field :category,placeholder: "10文字以内で入力"
+          .Main__right__ThirdContent__Brand
+            .Main__right__ThirdContent__Brand__Left
+              %p ブランド（任意）
+            .Main__right__ThirdContent__Brand__Right
+              = f.text_field :brand,placeholder: "10文字以内で入力"
+          .Main__right__ThirdContent__Size
+            .Main__right__ThirdContent__Size__Left
+              %p サイズ(任意)
+            .Main__right__ThirdContent__Size__Right
+              = f.select :size, Product.sizes.keys,{prompt:"サイズを選択しない"},  id: "select_status", class: "select_line"
+            
+          .Main__right__ThirdContent__Status
+            .Main__right__ThirdContent__Status__Left
+              %p 状態(必須)
+            .Main__right__ThirdContent__Status__Right
+              = f.select :product_status, Product.product_statuses.keys,{prompt:"---"},  id: "select_status", class: "select_line"
+    
+          .Main__right__ThirdContent__ShippingFee
+            .Main__right__ThirdContent__ShippingFee__Left
+              %p 配送料(必須)
+            .Main__right__ThirdContent__ShippingFee__Right
+              = f.select :shipping_fee, Product.shipping_fees.keys,{prompt:"---"},  id: "select_status", class: "select_line"
+
+          .Main__right__ThirdContent__ShippingType
+            .Main__right__ThirdContent__ShippingType__Left
+              %p 配送方法(必須)
+            .Main__right__ThirdContent__ShippingType__Right
+              = f.select :shipping_type, Product.shipping_types.keys,{prompt:"---"},  id: "select_status", class: "select_line"
+
+          .Main__right__ThirdContent__ListedArea
+            .Main__right__ThirdContent__ListedArea__Left
+              %p 出品地域(必須)
+            .Main__right__ThirdContent__ListedArea__Right
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "---"}, id: "category_form", class: "select_line"
+            
+          .Main__right__ThirdContent__ShippingDay
+            .Main__right__ThirdContent__ShippingDay__Left
+              %p 発送日の目安(必須)
+            .Main__right__ThirdContent__ShippingDay__Right
+              = f.select :shipping_day, Product.shipping_days.keys,{prompt:"---"}, id: "select_status", class: "select_line"
+
+    .Bottom
+      %button{:type => "submit"}
+        確認
+        %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
+  = render "front/under_suzuki"

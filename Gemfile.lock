@@ -114,6 +114,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
+    devise-i18n-views (0.3.7)
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -396,6 +397,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   devise
   devise-i18n
+  devise-i18n-views
   dotenv
   factory_bot_rails
   fog-aws

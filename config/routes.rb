@@ -14,12 +14,15 @@ Rails.application.routes.draw do
       get 'products'
     end
   end
+
   resources :products, except: :show
   resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
   resources :users, only: :show
   resources :glances
+
   resources :detail
   resources :comments
+
   resources :complete, only: [:index]
   resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
@@ -30,6 +33,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   get 'products/new'
+  get 'products/create'
 
 
 end

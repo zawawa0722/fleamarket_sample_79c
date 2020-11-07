@@ -16,6 +16,13 @@ $main-color: #3ccace;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &__Double {
+      display: flex;
+      &__1{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
     & h1 {
       font-size: 50px;
       font-weight: bold;
