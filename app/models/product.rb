@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   has_many :images, dependent: :destroy
+  belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 
   enum size: { XS: 0, S: 1, M: 2, L: 3, XL: 4, XL以上: 5, フリーサイズ: 6 }
