@@ -13,7 +13,11 @@
           %table
             %tr
               %th
-                出品者
+                商品名
+              %td
+            %tr
+              %th
+                商品説明
               %td
             %tr
               %th
@@ -25,7 +29,7 @@
               %td
             %tr
               %th
-                商品サイズ
+                サイズ
               %td
             %tr
               %th
@@ -37,11 +41,15 @@
               %td
             %tr
               %th
-                発送地域
+                配送方法
               %td
             %tr
               %th
-                発送日
+                出品地域
+              %td
+            %tr
+              %th
+                発送日の目安
               %td
       .main__show__contents__comment-box
         .main__show__contents__comment-box__field
@@ -57,7 +65,7 @@
             = link_to purchase_index_path do
               %button{:type => "submit"}
                 購入確認へ
-            = link_to '#' do
+            = link_to new_comment_path do
               %button{:type => "submit"}
                 コメントする
       %ul.main__show__contents__links
@@ -71,6 +79,6 @@
             %p 後の商品
       .main__show__contents__box
         .main__show__contents__box__list
-          - @items.each do |item|
+          - @products.each do |item|
             = link_to item_path(item), class: "main__contents__links__list" do
               = image_tag item.item_images[0].image.url, size: "220x220"
