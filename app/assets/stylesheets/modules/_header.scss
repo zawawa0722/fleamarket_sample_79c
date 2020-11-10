@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+
+* {
+  //box-sizing:border-box;
+}
+
+$main-color: #3ccace;
+
+.logo {
+  cursor: pointer;
+}
+body {
+  padding: 0;
+  margin: 0;
+  .column {
+    background: whitesmoke;
+  }
+  .search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 70%;
+    transform: translateY(-50%);
+    width: 140%;
+    text-align: center;
+    overflow: hidden;
+    &_bar {
+      width: 60%;
+      position: relative;
+      margin: 0 auto;
+      input[type="text"] {
+        width: 15px;
+        background: transparent;
+        transition: border 0.3s 0s,
+          width 0.2s 0.3s cubic-bezier(0.225, 0.01, 0.475, 1.01),
+          text-indent 0.2s 0.3s;
+        padding: 20px;
+        border-color: $main-color;
+        text-indent: 30px;
+        outline: none;
+        border: 0 solid $main-color;
+        font-size: 20px;
+        color: #a8a952;
+        border-radius: 5px;
+        //text-transform:uppercase;
+        font-family: "Nunito", sans-serif;
+        height: 35px;
+      }
+      ::-webkit-input-placeholder {
+        /* Safari, Chrome and Opera */
+        color: $main-color;
+        font-weight: 400;
+        font-family: "Nunito", sans-serif;
+      }
+      ::-moz-input-placeholder {
+        /* Safari, Chrome and Opera */
+        color: $main-color;
+        font-weight: 400;
+        font-family: "Nunito", sans-serif;
+      }
+      ::-o-input-placeholder {
+        /* Safari, Chrome and Opera */
+        color: $main-color;
+        font-weight: 400;
+        font-family: "Nunito", sans-serif;
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+      input[type="checkbox"]:checked + label + input {
+        width: 60%;
+        border: 3px solid $main-color;
+        text-indent: 0px;
+      }
+      input[type="checkbox"]:checked + label i {
+        right: 0px;
+        transform: translateY(-50%) translateX(50%) rotate(360deg) scale(0);
+        color: $main-color;
+        &:hover {
+          //background:white;
+        }
+      }
+      input[type="checkbox"]:checked + label .last {
+        left: 220px;
+        transform: translateY(-50%) rotate(360deg) scale(1);
+        &:hover {
+          //background:white;
+        }
+      }
+      input[type="checkbox"]:checked + label p {
+        top: 50%;
+        transition: all 0.3s 0.45s;
+      }
+      input[type="checkbox"]:not(checked) + label p {
+        top: -50%;
+        transition: all 0.3s 0s;
+      }
+      .last {
+        -webkit-transform: translateY(-50%) rotate(0deg) scale(0);
+        transform: translateY(-50%) rotate(0deg) scale(0);
+      }
+      i {
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+        transform: translateY(-50%) translateX(50%) rotate(0deg) scale(1);
+        cursor: pointer;
+        z-index: 2;
+        margin: auto;
+        border-radius: 4px;
+        width: 56px;
+        right: 50%;
+        height: 54px;
+        background: transparent;
+        transition: right 0.3s 0.3s, transform 0.3s 0.3s, color 0.3s;
+        line-height: 60px;
+        color: $main-color;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      p {
+        position: absolute;
+        margin: 0;
+        right: 250px;
+        color: $main-color;
+        font-weight: 700;
+        font-size: 30px;
+        top: -50%;
+        transform: translateY(-50%) rotate(0deg) scale(1);
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
     .Content__Main
       .Content__Main__Text 購入内容の確認
       .Content__Main__Item-infomation
-        = image_tag 'udon.jpeg', alt: '商品画像', height: '150px', width: '150px', class: 'Content__Main__Item-infomation__Image'
+        = image_tag 'udon.jpeg', alt: '商品画像', height: '150px', width: '200px', class: 'Content__Main__Item-infomation__Image'
         .Content__Main__Item-infomation__Detail
           .Content__Main__Item-infomation__Item-name ※商品名表示
           .Content__Main__Item-infomation__Item-price  価格
@@ -15,14 +15,15 @@
         .Content__Main__Payment__Choise
           = link_to new_card_path, target: "_blank" do
             %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
+              = icon('fas', 'keyboard', class: 'keyboard-icon')
               カード情報を入力する
       .Content__Main__User-infomation
         .Content__Main__User-infomation__Box
           .Content__Main__User-infomation__Delivery-address  配送先
-          .Content__Main__User-infomation__Delivery-address__Change 変更する >
         .Content__Main__User-infomation__Address ※住所表示
       .Content__Main__Purchase-btn
         %button{type: "submit", class: "Content__Main__Purchase-btn__Box2"}
+          = icon('fas', 'shopping-cart', class: 'shopping-icon')
           購入する
   .Content__Hooter
     = render "under_suzuki"
