@@ -168,12 +168,37 @@
     .LogoField  
       = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
     .MarioFields
-      .MessageAlert
-        出品にはユーザー登録かログインが必要です。
+      .title-glitch-top
+        .glitch.character{"data-text" => "出"} 出
+        .glitch.character{"data-text" => "品"} 品
+        .glitch.character{"data-text" => "に"} に
+        .glitch.character{"data-text" => "は"} は
+        .glitch.character{"data-text" => ""}
+        .glitch.character{"data-text" => "ユ"} ユ
+        .glitch.character{"data-text" => "ー"} ー
+        .glitch.character{"data-text" => "ザ"} ザ
+        .glitch.character{"data-text" => "ー"} ー
+        .glitch.character{"data-text" => "登"} 登
+        .glitch.character{"data-text" => "録"} 録
+        .glitch.character{"data-text" => ""} 
+        .glitch.character{"data-text" => "ま"} ま
+        .glitch.character{"data-text" => "た"} た
+        .glitch.character{"data-text" => "は"} は
+        .glitch.character{"data-text" => ""} 
+        .glitch.character{"data-text" => "ロ"} ロ
+        .glitch.character{"data-text" => "グ"} グ
+        .glitch.character{"data-text" => "イ"} イ
+        .glitch.character{"data-text" => "ン"} ン
+        .glitch.character{"data-text" => "が"} が
+        .glitch.character{"data-text" => "必"} 必
+        .glitch.character{"data-text" => "要"} 要
+        .glitch.character{"data-text" => "で"} で
+        .glitch.character{"data-text" => "す"} す
       .MessageBox
         .MessageBox__Form
           = link_to "新規登録", new_user_registration_path, class: "post"
         .MessageBox__Form
           = link_to "ログイン", new_user_session_path, class: "post"
+    %h1.page-title
     .wrapper
       = render "front/under_suzuki"
