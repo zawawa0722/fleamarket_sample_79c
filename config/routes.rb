@@ -39,5 +39,7 @@ Rails.application.routes.draw do
   get 'card/show'
   get 'products/new'
   get 'products/create'
+  get 'items/index'
+
 end
 
