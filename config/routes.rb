@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
+  
   root "front#index"
 
   resources :front do
@@ -16,22 +17,20 @@ Rails.application.routes.draw do
   end
 
   resources :products, except: :show
-  resources :purchase, only: [:index, :new, :edit, :create, :update, :purchase]
-  resources :users, only: :show
-  resources :detail do
-    resources :comments
+  resources :purchase do
+    member do
+      post 'products'
+    end
   end
-  resources :glances
+  resources :users, only: :show
 
   resources :detail
   resources :comments
   resources :products, only: :create
   resources :complete, only: [:index]
-  resources :card, only: [:new, :create, :destory, :show, :index]
+  resources :card, only: [:new, :create, :destory, :show]
   get 'glances/index'
   get 'detail/index'
-  get 'products/new'
-  post 'card/new'
   get 'comments/index'
   get 'complete/index'
   post 'card/new'
@@ -39,5 +38,5 @@ Rails.application.routes.draw do
   get 'card/show'
   get 'products/new'
   get 'products/create'
+  post 'purchase/create'
 end
-
