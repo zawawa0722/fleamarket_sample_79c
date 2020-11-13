@@ -1,0 +1,157 @@
+
+.details{
+  width:50%;
+  margin: 70px 0px 0px 40px;
+  float:left;
+  text-align:left;
+}
+
+.role{
+  padding-bottom:5px; 
+}
+
+.contact{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.avatar{
+  float:right;
+  margin-top: 60px;
+  margin-right:40px;
+}
+
+
+.social {
+  margin-top:40px;
+  margin-left:5%;
+  width: 90%;
+}
+
+.social table{
+  width:100%; 
+  height:220px;
+  border-collapse:collapse;
+}
+
+.social table td{
+  width:50%;
+  opacity:0.5;
+}
+
+.social table td:hover{
+  opacity:1;
+}
+
+.socialico{
+  height:32px;
+  width:32px;
+  float:left;
+  margin-left:30px;
+  margin-right:0px;
+  margin-top:10px;
+}
+
+.sociallink{
+  float:left; 
+  margin:20px;
+}
+
+.sociallink a{
+  text-decoration:none;
+  color:white;
+}
+
+//以下
+.MypageField{
+  width:100vw;
+  height:40vw;
+  position: relative;
+}
+
+
+.flip {
+  position: absolute;
+  left: 50%;
+  align-items: center;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  &:hover {
+    .flip-inner {
+      transform: rotateY(180deg);
+    }
+  }
+  .flip-inner {
+    transform-style: preserve-3d;
+    transition: transform .8s ease;
+    height: 100%;
+    width: 100%;
+    .front, .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10%;
+      overflow: hidden;
+      background: linear-gradient(to bottom right,#c9f5ff,#3CCACE,#00cace)
+    }
+    .front {
+      transform: translateZ(1px);
+    }
+    .back {
+      transform: rotateY(180deg);
+    }
+    .thumbnail {
+      width: 100%;
+    }
+  }
+}
+.socialico1{
+  height:32px;
+  width:32px;
+  float:left;
+  margin-left:30px;
+  margin-right:0px;
+}
+
+
+#popup {
+  line-height: 100px;
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  top:50%;
+  left:48%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+label {
+  display: block;
+  position: absolute;
+  right:18%;
+  bottom:30%;
+  span {
+    display: block;
+    width: 200px;
+    line-height: 40px;
+    border-radius: 4px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+input[type="checkbox"] {
+  display: none;
+
+  &:checked + #popup {
+    display: block;
+    transition: .2s;
+  }
+}
