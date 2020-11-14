@@ -2,7 +2,6 @@ $(function() {
   $('#cardCreateForm').on('submit', function(e) {
     e.preventDefault()
     var form = $("#cardCreateForm");
-    // Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
     Payjp.setPublicKey("pk_test_94ce8c98bfdbf3ebe7d41251");
     var card = {
       number: document.getElementById("card-number").value,
@@ -10,7 +9,6 @@ $(function() {
       exp_year: document.getElementById("exp_year").value,
       cvc: document.getElementById("cvc").value
     };
-    // console.log(card)
     if (card.number == "" || card.cvc == "") {
       alert("入力もれがあります");
     } else {
