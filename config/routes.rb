@@ -16,8 +16,20 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, except: :show
+  resources :products, except: :show do
+    resources :purchase do
+      member do
+        get "index"
+        post "create"
+      end
+    end
+  end
+
   resources :purchase do
+    collection do
+      get 'complete'
+    end
+
     member do
       post 'products'
     end
@@ -38,5 +50,5 @@ Rails.application.routes.draw do
   get 'card/show'
   get 'products/new'
   get 'products/create'
-  post 'purchase/create'
+  # post 'purchase/pay'
 end
