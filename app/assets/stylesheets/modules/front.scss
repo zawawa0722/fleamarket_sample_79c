@@ -352,7 +352,8 @@
       &__text{
         display: list-item;
         line-height: normal;
-        a {
+        
+        &__links{
           color: #fff;
           font-size: 12px;
           text-decoration: none;
