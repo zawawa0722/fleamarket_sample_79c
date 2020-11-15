@@ -58,4 +58,21 @@ Rails.application.routes.draw do
   get 'card/show'
   get 'products/new'
   get 'products/create'
+
+  resources :products do
+    resources :comments,  only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
+    collection do
+      get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
+      get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      get 'search'
+      get 'post_done'
+      get 'delete_done'
+      get 'detail_search'
+      get 'update_done'
+    end
+  end
+
 end
+
+
