@@ -5,25 +5,42 @@
     .Content__Main
       .Content__Main__Text 購入内容の確認
       .Content__Main__Item-infomation
-        = image_tag 'udon.jpeg', alt: '商品画像', height: '150px', width: '150px', class: 'Content__Main__Item-infomation__Image'
+        = image_tag 'dog1.jpeg', alt: '商品画像', height: '150px', width: '200px', class: 'Content__Main__Item-infomation__Image'
         .Content__Main__Item-infomation__Detail
-          .Content__Main__Item-infomation__Item-name ※商品名表示
-          .Content__Main__Item-infomation__Item-price  価格
-          送料込み(税込)
+          .Content__Main__Item-infomation__Item-name
+            = @product.product_name
+          .Content__Main__Item-infomation__Item-price
+            = @product.price
+            円
       .Content__Main__Payment
-        .Content__Main__Payment__Text 支払い方法
+        .Content__Main__Payment__Text 
+          支払い方法
+          .Content__Main__Payment__Card 
+            クレジットカード
+            = "**** **** **** " + @card_information.last4
+          .Content__Main__Payment__Card__Information
+            有効期限
+            - exp_month = @card_information.exp_month.to_s
+            - exp_year = @card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
         .Content__Main__Payment__Choise
           = link_to new_card_path, target: "_blank" do
             %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
+              = icon('fas', 'keyboard', class: 'keyboard-icon')
               カード情報を入力する
       .Content__Main__User-infomation
         .Content__Main__User-infomation__Box
-          .Content__Main__User-infomation__Delivery-address  配送先
-          .Content__Main__User-infomation__Delivery-address__Change 変更する >
-        .Content__Main__User-infomation__Address ※住所表示
+          .Content__Main__User-infomation__Delivery-text  配送先
+          .Content__Main__User-infomation__Delivery-address
+            .Content__Main__User-infomation__Address
+              = @address.prefectures + @address.city + @address.address
+            .Content__Main__User-infomation__Name
+              = @user.nickname  + "様"
       .Content__Main__Purchase-btn
-        %button{type: "submit", class: "Content__Main__Purchase-btn__Box2"}
-          購入する
+        = link_to purchase_index_path(product_id: @product.id), method: :post do
+          %button{type: "submit", class: "Content__Main__Purchase-btn__Box2"}
+            = icon('fas', 'shopping-cart', class: 'shopping-icon')
+            .purchase__text 購入する
   .Content__Hooter
     = render "under_suzuki"
 

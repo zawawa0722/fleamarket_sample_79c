@@ -1,14 +1,20 @@
 .upper-field
   .upper-field__in
     .upper-field__in__main  
-      %h1.upper-field__in__main__logo
-        %a(href="/")
-          = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
-      .upper-field__in__main__search-box
-        .upper-field__in__main__search-box__btn
-          検索ボックスが入ります
-        .upper-field__in__main__search-box__btn__s
-          虫眼鏡
+      = link_to '/' do
+        = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: 'logo'
+          
+      /ここから検索バー    
+      .column
+        .search
+          .search_bar
+            %input#searchOne{:type => 'checkbox'}
+            %label{:for => 'searchOne'}
+              %i.icon.ion-android-search
+              = icon('fas', 'search', class: 'search-icon')
+              %i.last.icon.ion-android-close
+            %input{:type => 'text',:placeholder => 'Search...'}
+      /ここまで検索バー
   .upper-field__navigate
     .upper-field__navigate__left-side
       %ul.upper-field__navigate__left-side__item
@@ -506,16 +512,17 @@
     %ul.upper-field__navigate__right-side
       %li.upper-field__navigate__right-side__login
         - if user_signed_in?
-          .upper-field__navigate__right-side__login.grid-6
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-        - else
-          .grid-6
-            = link_to "ログイン", new_user_session_path, class: "post"
-            
-      %li.upper-field__navigate__right-side__register
-        - if user_signed_in?
           .upper-field__navigate__right-side__register.grid-6
-            = link_to "マイページ", new_tweet_path, class: "post"
+            ログイン中
+            //= link_to "マイページ", new__path, class: "post"
         - else
           .grid-6
             = link_to "新規登録", new_user_registration_path, class: "post"
+          
+      %li.upper-field__navigate__right-side__register
+        - if user_signed_in?
+          .upper-field__navigate__right-side__login.grid-6
+            = button_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          .grid-6
+            = link_to "ログイン", new_user_session_path, class: "post"

@@ -1,0 +1,53 @@
+.LogoField  
+  = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
+.MypageField
+  .flip
+    .flip-inner
+      .front
+        .details
+          %div
+            Nick Name
+          %hr/
+          .role
+            Email
+          .contact
+            Zip Cord
+          .contact
+            Adress
+      .back
+        .social
+          %table
+            %tr
+              %td
+                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                .sociallink
+                  出品履歴
+              %td
+                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                .sociallink
+                  情報修正
+            %tr
+              %td
+                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                .sociallink
+                  カード情報
+              %td
+                %img.socialico1{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                .sociallink
+                  %label
+                    %span 今日の運勢
+                    %input{:name => "checkbox", :type => "checkbox"}/
+                    #popup
+                      :javascript
+                        var imglist = new Array(
+                        {"src":"/kichi.png","width": 100, "height": 250 },
+                        {"src":"/chuukichi.png","width": 100, "height": 250 },
+                        {"src":"/kyou.png","width": 100, "height": 250 },
+                        {"src":"/daikichi.png","width": 100, "height": 250 },
+                        {"src":"/syoukichi.png","width": 100, "height": 250 },
+                        );
+                        var selectnum = Math.floor(Math.random() * imglist.length);
+                        var output = "<img src='" + imglist[selectnum].src + "' width='"+ imglist[ selectnum ].width+ "' height='"+ imglist[ selectnum ].height+ "'>";
+                        document.write(output);
+              
+

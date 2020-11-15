@@ -861,15 +861,7 @@ $marioHeight: 54px;
   }
 }
 
-.MessageAlert{
-  padding-top:20px; 
-  font-size:30px;
-  text-align: center;
-  width: 100%;
-  color:red;
-  animation: Form 1s;
-  animation-iteration-count:infinite;
-}
+
 .MessageBox{
   width: 100%;
   height:200px;
@@ -883,6 +875,7 @@ $marioHeight: 54px;
     margin:0 5px 0 5px;
     height: 50px;
     font-size:20px;
+    
     a:hover{
       color: orange;
       animation: Choose 1s;
@@ -902,11 +895,236 @@ $marioHeight: 54px;
   }
 }
 
-@keyframes Form {
-  0%,100% {
-      opacity:1;
+
+$main-green: #53f765;
+$main-yellow: #fffd35;
+$main-orange: #ff9c00;
+$main-red: #ff3368;
+$main-blue: #32f8ff;
+$main-darkblue: #324fff;
+$margin: 1.375rem;
+
+
+// Glitch
+.glitch {
+  color: red;
+  line-height: 1;
+}
+
+.character {
+  display: inline-block;
+  position: relative;
+  letter-spacing: -$margin/1.5;
+}
+
+
+@keyframes glitch-animation-after {
+  0% {
+    clip: rect(15px, 600px, 100px, 0)
   }
-  50% {
-      opacity:0;
+  6% {
+    clip: rect(6px, 600px, 94px, 0)
   }
+  13% {
+    clip: rect(28px, 600px, 58px, 0)
+  }
+  20% {
+    clip: rect(32px, 600px, 37px, 0)
+  }
+  26% {
+    clip: rect(76px, 600px, 39px, 0)
+  }
+  33% {
+    clip: rect(74px, 600px, 36px, 0)
+  }
+  40% {
+    clip: rect(81px, 600px, 34px, 0)
+  }
+  46% {
+    clip: rect(54px, 600px, 14px, 0)
+  }
+  53% {
+    clip: rect(65px, 600px, 50px, 0)
+  }
+  60% {
+    clip: rect(85px, 600px, 100px, 0)
+  }
+  66% {
+    clip: rect(61px, 600px, 72px, 0)
+  }
+  73% {
+    clip: rect(23px, 600px, 65px, 0)
+  }
+  80% {
+    clip: rect(0, 0, 0, 0)
+  }
+  100% {
+    clip: rect(0, 0, 0, 0)
+  }
+}
+
+@keyframes glitch-animation-after {
+  0% {
+    clip: rect(65px, 600px, 39px, 0)
+  }
+  6% {
+    clip: rect(19px, 600px, 21px, 0)
+  }
+  13% {
+    clip: rect(80px, 600px, 51px, 0)
+  }
+  20% {
+    clip: rect(6px, 600px, 16px, 0)
+  }
+  26% {
+    clip: rect(31px, 600px, 95px, 0)
+  }
+  33% {
+    clip: rect(94px, 600px, 84px, 0)
+  }
+  40% {
+    clip: rect(84px, 600px, 74px, 0)
+  }
+  46% {
+    clip: rect(97px, 600px, 55px, 0)
+  }
+  53% {
+    clip: rect(7px, 600px, 18px, 0)
+  }
+  60% {
+    clip: rect(24px, 600px, 17px, 0)
+  }
+  66% {
+    clip: rect(28px, 600px, 97px, 0)
+  }
+  73% {
+    clip: rect(61px, 600px, 2px, 0)
+  }
+  80% {
+    clip: rect(0, 0, 0, 0)
+  }
+  100% {
+    clip: rect(0, 0, 0, 0)
+  }
+}
+
+@keyframes glitch-animation-before {
+  0% {
+    clip: rect(62px, 600px, 45px, 0)
+  }
+  6% {
+    clip: rect(46px, 600px, 67px, 0)
+  }
+  13% {
+    clip: rect(68px, 600px, 49px, 0)
+  }
+  20% {
+    clip: rect(82px, 600px, 56px, 0)
+  }
+  26% {
+    clip: rect(53px, 600px, 6px, 0)
+  }
+  33% {
+    clip: rect(9px, 600px, 90px, 0)
+  }
+  40% {
+    clip: rect(95px, 600px, 69px, 0)
+  }
+  46% {
+    clip: rect(50px, 600px, 99px, 0)
+  }
+  53% {
+    clip: rect(4px, 600px, 60px, 0)
+  }
+  60% {
+    clip: rect(78px, 600px, 97px, 0)
+  }
+  66% {
+    clip: rect(30px, 600px, 69px, 0)
+  }
+  73% {
+    clip: rect(68px, 600px, 49px, 0)
+  }
+  80% {
+    clip: rect(0, 0, 0, 0)
+  }
+  100% {
+    clip: rect(0, 0, 0, 0)
+  }
+}
+
+@keyframes glitch-animation-before {
+  0% {
+    clip: rect(86px, 600px, 98px, 0)
+  }
+  6% {
+    clip: rect(62px, 600px, 92px, 0)
+  }
+  13% {
+    clip: rect(91px, 600px, 20px, 0)
+  }
+  20% {
+    clip: rect(47px, 600px, 44px, 0)
+  }
+  26% {
+    clip: rect(1px, 600px, 77px, 0)
+  }
+  33% {
+    clip: rect(99px, 600px, 22px, 0)
+  }
+  40% {
+    clip: rect(44px, 600px, 12px, 0)
+  }
+  46% {
+    clip: rect(71px, 600px, 65px, 0)
+  }
+  53% {
+    clip: rect(52px, 600px, 28px, 0)
+  }
+  60% {
+    clip: rect(10px, 600px, 15px, 0)
+  }
+  66% {
+    clip: rect(75px, 600px, 69px, 0)
+  }
+  73% {
+    clip: rect(57px, 600px, 62px, 0)
+  }
+  80% {
+    clip: rect(0, 0, 0, 0)
+  }
+  100% {
+    clip: rect(0, 0, 0, 0)
+  }
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(204, 57, 107, 0);
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch:after {
+  left: 2px;
+  text-shadow: -5px 0 rgba(255, 51, 104, 0.5);
+  animation: glitch-animation-after 2s infinite linear alternate-reverse;
+}
+
+.glitch:before {
+  left: -2px;
+  text-shadow: 5px 0 rgba(94, 38, 255, 0.5);
+  animation: glitch-animation-before 3s infinite linear alternate-reverse;
+}
+
+.title-glitch-top {
+  font-family: 'Verdana';
+  font-weight: bold;
+  font-size: 3em;
+  padding-top:20px;
+  text-align: center;
 }

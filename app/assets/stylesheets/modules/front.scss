@@ -100,14 +100,21 @@
         color: orange;
         animation: menu 1s;
       }
+      &__glances{
+        padding: 0 0 0 16px;
+      }
+      a:hover{
+        color: orange;
+        animation: menu 1s;
+      }
     }
     &__right-side{
       margin-left: auto;
       display: flex;
       &__login{
         color: #333;
-        padding: 0 0 0 16px;
         line-height: 38px;
+        margin-right: 30px;
         a:hover{
           color: orange;
           animation: menu 1s;
@@ -138,6 +145,7 @@
           }
         }
       }
+      
     }
   }
 }
@@ -352,7 +360,8 @@
       &__text{
         display: list-item;
         line-height: normal;
-        a {
+        
+        &__links{
           color: #fff;
           font-size: 12px;
           text-decoration: none;

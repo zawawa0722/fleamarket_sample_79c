@@ -8,8 +8,8 @@
     flex-direction: column;
     align-items: center;
     &__bar {
-      width: 80%;
-      height: 80px;
+      width: 70%;
+      height: 50px;
       background-color: #3ccace;
       color: #ffffff;
       text-align: center;
@@ -21,7 +21,13 @@
       font-size: 30px;
       border-radius: 20px;
       margin: 60px;
+      letter-spacing: 10px;
     }
+    .Pickup__Contents__Box {
+      width: 78%;
+      height: auto;
+    }
+
     .Pickup__Contents__Lists {
       height: 100%;
       width: 100%;
