@@ -40,7 +40,7 @@
         = link_to purchase_index_path(product_id: @product.id), method: :post do
           %button{type: "submit", class: "Content__Main__Purchase-btn__Box2"}
             = icon('fas', 'shopping-cart', class: 'shopping-icon')
-            購入する
+            .purchase__text 購入する
   .Content__Hooter
     = render "under_suzuki"
 

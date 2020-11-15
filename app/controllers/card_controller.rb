@@ -45,6 +45,21 @@ class CardController < ApplicationController
     end
   end
 
+  def destroy #PayjpとCardデータベースを削除する
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to action: "complete"
+  end
+
+  def complete
+  end
+
   private
     def return_to_root #ログインしていなければトップ画面に遷移
       redirect_to root_path unless user_signed_in?

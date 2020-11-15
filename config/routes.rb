@@ -34,13 +34,21 @@ Rails.application.routes.draw do
       post 'products'
     end
   end
-  resources :users, only: :show
 
+  resources :card, only: [:new, :create, :destory, :show] do
+    collection do
+      delete 'destroy'
+      post 'new'
+      get 'complete'
+    end
+  end
+
+  resources :users, only: :show
   resources :detail
   resources :comments
   resources :products, only: :create
   resources :complete, only: [:index]
-  resources :card, only: [:new, :create, :destory, :show]
+  
   get 'glances/index'
   get 'detail/index'
   get 'comments/index'
