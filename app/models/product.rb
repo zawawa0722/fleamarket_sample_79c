@@ -25,9 +25,9 @@ class Product < ApplicationRecord
   validates :trading_status,  presence: { message: "を入力してください"}
   #validates :seller_id,  presence: { message: "を入力してください"}
 
-  # validates_associated :images
-  validates :images, presence: true
+  validates_associated :images
+  validates :images, presence: {message: "を最低1枚選択してください"}
 
-  # accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true
 
 end

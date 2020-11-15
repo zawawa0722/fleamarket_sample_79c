@@ -4,35 +4,26 @@
   .flip
     .flip-inner
       .front
-        .details
-          %div
-            Nick Name
-          %hr/
-          .role
-            Email
-          .contact
-            Zip Cord
-          .contact
-            Adress
-      .back
         .social
           %table
             %tr
               %td
-                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                = image_tag "big_ben.png", class:"socialicon1"
                 .sociallink
                   出品履歴
               %td
-                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                = image_tag "document_syorui_pen.png", class:"socialicon2"
                 .sociallink
-                  情報修正
+                  = link_to edit_user_registration_path do
+                    情報修正
             %tr
               %td
-                %img.socialico{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                = image_tag "creditcard_gold.png", class:"socialicon3"
                 .sociallink
-                  カード情報
+                  = link_to card_new_path do
+                    カード情報
               %td
-                %img.socialico1{:src => "http://icons.iconarchive.com/icons/studiomx/web/256/Earth-icon.png"}/
+                = image_tag "syougatsu2_omijikuji2.png", class:"socialicon4"
                 .sociallink
                   %label
                     %span 今日の運勢
@@ -49,5 +40,16 @@
                         var selectnum = Math.floor(Math.random() * imglist.length);
                         var output = "<img src='" + imglist[selectnum].src + "' width='"+ imglist[ selectnum ].width+ "' height='"+ imglist[ selectnum ].height+ "'>";
                         document.write(output);
+      .back
+        .details
+          %div
+            Nick Name
+          %hr/
+          .role
+            Email
+          .contact
+            Zip Cord
+          .contact
+            Adress
 .wrapper
   =render "front/under_suzuki"
