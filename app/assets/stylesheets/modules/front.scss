@@ -100,6 +100,13 @@
         color: orange;
         animation: menu 1s;
       }
+      &__glances{
+        padding: 0 0 0 16px;
+      }
+      a:hover{
+        color: orange;
+        animation: menu 1s;
+      }
     }
     &__right-side{
       margin-left: auto;
@@ -138,6 +145,7 @@
           }
         }
       }
+      
     }
   }
 }

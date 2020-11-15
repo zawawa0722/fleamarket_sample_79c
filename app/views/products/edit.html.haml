@@ -9,6 +9,24 @@
       .LeftContents
         #image-box
           #previews
+          - if @product.persisted?
+            .LeftContents__FirstContent{id:"FirstContent0"}
+              .LeftContents__FirstContent__img
+                = image_tag @product.images.first.image.url, data: { index: 0 },id: "img0"
+            .LeftContents__FirstContent__Delete_btn{id: "Delete_btn#{0}"}
+              x
+                                    
+
+            .LeftContents__SecondContent
+              - 3.times do |i|
+                - if @product.images[i + 1].present?
+                  .LeftContents__SecondContent__Center{id: "SecondContent#{i+1}"}
+                    .LeftContents__SecondContent__Left__img
+                      = image_tag @product.images[i + 1].image.url, data: { index: i + 1 }, width: "100", height: '100',id: "img#{i + 1}"
+                  .LeftContents__SecondContent__Left__Delete_btn{id: "Delete_btn#{i+1}"}
+                    x
+                    
+                      
           #image-box
           = f.fields_for :images do |image|
             .LeftContents__FirstContent{id:"FirstContent_nil0"}

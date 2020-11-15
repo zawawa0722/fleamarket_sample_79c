@@ -43,9 +43,32 @@
   opacity:1;
 }
 
-.socialico{
-  height:32px;
-  width:32px;
+.socialicon1{
+  height:70px;
+  width:50px;
+  float:left;
+  margin-left:30px;
+  margin-right:0px;
+}
+.socialicon2{
+  height:50px;
+  width:50px;
+  float:left;
+  margin-left:30px;
+  margin-right:0px;
+  margin-top:10px;
+}
+.socialicon3{
+  height:40px;
+  width:50px;
+  float:left;
+  margin-left:30px;
+  margin-right:0px;
+  margin-top:10px;
+}
+.socialicon4{
+  height:70px;
+  width:50px;
   float:left;
   margin-left:30px;
   margin-right:0px;
@@ -59,7 +82,8 @@
 
 .sociallink a{
   text-decoration:none;
-  color:white;
+  color:black;
+  font-size: 16px;
 }
 
 //以下
@@ -109,13 +133,6 @@
     }
   }
 }
-.socialico1{
-  height:32px;
-  width:32px;
-  float:left;
-  margin-left:30px;
-  margin-right:0px;
-}
 
 
 #popup {
@@ -133,7 +150,7 @@
 label {
   display: block;
   position: absolute;
-  right:18%;
+  right:13%;
   bottom:30%;
   span {
     display: block;
