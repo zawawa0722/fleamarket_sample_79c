@@ -24,6 +24,7 @@ Things you may want to cover:
 
 * ...
 
+20201107075058_create_categories.rb
 ##  usersテーブル
 
 |Column|Type|Option|
