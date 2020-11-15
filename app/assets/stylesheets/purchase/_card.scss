@@ -107,3 +107,33 @@ $main-color: #3ccace;
 .expiration_date_box {
   display: flex;
 }
+
+.card {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__text {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__button {
+    height: 60px;
+    width: 400px;
+    background-color: $main-color;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    margin: 50px 0;
+    cursor: pointer;
+  }
+}
+
+.button__text {
+  font-size: 20px;
+}
