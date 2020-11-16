@@ -4,6 +4,22 @@
   .flip
     .flip-inner
       .front
+        .details
+          %div
+            Nick Name
+            = current_user.nickname
+          %hr/
+          .role
+            Email
+            = current_user.email
+          .contact
+            Name
+            = current_user.family_name
+            = current_user.first_name
+          .contact
+            Birthday
+            = current_user.birthday
+      .back
         .social
           %table
             %tr
@@ -40,16 +56,5 @@
                         var selectnum = Math.floor(Math.random() * imglist.length);
                         var output = "<img src='" + imglist[selectnum].src + "' width='"+ imglist[ selectnum ].width+ "' height='"+ imglist[ selectnum ].height+ "'>";
                         document.write(output);
-      .back
-        .details
-          %div
-            Nick Name
-          %hr/
-          .role
-            Email
-          .contact
-            Zip Cord
-          .contact
-            Adress
 .wrapper
   =render "front/under_suzuki"

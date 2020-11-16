@@ -46,19 +46,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :detail
   resources :comments
-  resources :products, only: :create
   resources :complete, only: [:index]
   
-  get 'glances/index'
-  get 'detail/index'
-  get 'comments/index'
-  get 'complete/index'
-  post 'card/new'
-  get 'card/new'
-  get 'card/show'
-  get 'products/new'
-  get 'products/create'
-
+ 
   resources :products do
     resources :comments,  only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
@@ -72,7 +62,6 @@ Rails.application.routes.draw do
       get 'update_done'
     end
   end
-
 end
 
 

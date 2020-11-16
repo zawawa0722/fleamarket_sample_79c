@@ -1,0 +1,17 @@
+.Complete__Contents
+  = link_to '/' do
+    = image_tag 'logo.png', alt: ',ロゴ', height: '50px', width: '170px', class: 'logo-complete'
+  .Complete__Contents__Box
+    %h1 編集が完了しました！
+    %h2 売れるといいね!
+    .Complete__Contents__Box__Double
+      .Complete__Contents__Box__Double__1
+        = link_to "/" do
+          %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
+            編集画面へ
+            = icon('fas', 'door-open', class: 'door-icon')
+      .Complete__Contents__Box__Double__1
+        = link_to "/" do
+          %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
+            トップページへ戻る
+            = icon('fas', 'door-open', class: 'door-icon')

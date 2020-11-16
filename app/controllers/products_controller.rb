@@ -24,6 +24,14 @@ class ProductsController < ApplicationController
     
   end
 
+  def destroy
+    if @product.destroy 
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      redirect_to product_path(params[:id]), notice: "権限がありません"
+    end
+  end
+
   def create
     @product = Product.new(product_params)
     unless @product.save
@@ -35,6 +43,7 @@ class ProductsController < ApplicationController
     end
   end
 
+
   def show
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent
@@ -42,21 +51,21 @@ class ProductsController < ApplicationController
     @category_grandchild = Category.find(@category_id)
   end
 
-
-  def destroy
-    if @product.destroy 
-      redirect_to root_path, notice: "削除が完了しました"
-    else
-      redirect_to product_path(params[:id]), notice: "権限がありません"
-    end
-  end
-  
   def edit
   end
 
   def update
+    if@product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
+  def update_done
+    @product = Product.where(user_id: current_user.id).last
+    @product_update = Product.order("updated_at DESC").first
+  end
 
 private
   def product_params
@@ -81,9 +90,14 @@ private
     )  
   end
 
+
+  def set_product
+    @product = Product.find(params[:id])
+  end  
   def product_params
     params.require(:product).permit(
       :category_id,
       )
   end
 end
+
