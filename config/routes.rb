@@ -58,10 +58,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   get 'products/new'
-  get 'products/create'
-  post "products/:id/update" => "products#update"
-  post "products/:id/destroy" => "products#destroy"
-
+ 
   resources :products do
     resources :comments,  only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
