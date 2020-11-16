@@ -48,15 +48,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :complete, only: [:index]
   
-
-  get 'glances/index'
-  get 'detail/index'
-  get 'comments/index'
-  get 'complete/index'
-  post 'card/new'
-  get 'card/new'
-  get 'card/show'
-  get 'products/new'
  
   resources :products do
     resources :comments,  only: [:create, :destroy]
