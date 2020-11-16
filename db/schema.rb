@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 2020_10_28_000040) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
@@ -51,20 +59,11 @@ ActiveRecord::Schema.define(version: 2020_10_28_000040) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.text "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "product_name", null: false
     t.text "description", null: false
     t.integer "price", null: false
     t.string "brand", null: false
-    t.string "category", null: false
     t.integer "product_status", null: false
     t.integer "prefecture_id", null: false
     t.integer "size"
@@ -73,9 +72,11 @@ ActiveRecord::Schema.define(version: 2020_10_28_000040) do
     t.integer "shipping_fee", null: false
     t.integer "trading_status", null: false
     t.bigint "user_id"
+    t.bigint "category_id", null: false
     t.timestamp "deal_closed_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -99,5 +100,6 @@ ActiveRecord::Schema.define(version: 2020_10_28_000040) do
 
   add_foreign_key "comments", "users"
   add_foreign_key "images", "products"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end
