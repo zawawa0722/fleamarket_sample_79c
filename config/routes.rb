@@ -46,9 +46,10 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :detail
   resources :comments
-  resources :products, only: :create
+  resources :products, only: [:create,:edit,:destroy,:new,:update]
   resources :complete, only: [:index]
   
+
   get 'glances/index'
   get 'detail/index'
   get 'comments/index'
@@ -58,4 +59,6 @@ Rails.application.routes.draw do
   get 'card/show'
   get 'products/new'
   get 'products/create'
+  post "products/:id/update" => "products#update"
+  post "products/:id/destroy" => "products#destroy"
 end

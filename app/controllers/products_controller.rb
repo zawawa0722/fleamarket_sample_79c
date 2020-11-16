@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.includes(:images).order('created_at DESC').where.not(trading_status: 0)
@@ -7,6 +8,14 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+  end
+
+  def destroy
+    if @product.destroy 
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      redirect_to product_path(params[:id]), notice: "権限がありません"
+    end
   end
 
   def create
@@ -20,20 +29,23 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-    if @product.destroy 
-      redirect_to root_path, notice: "削除が完了しました"
-    else
-      redirect_to product_path(params[:id]), notice: "権限がありません"
-    end
-  end
   
   def edit
   end
 
   def update
+    @product = Product.find(params[:id])
+    if@product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
+  def update_done
+    @product = Product.where(user_id: current_user.id).last
+    @product_update = Product.order("updated_at DESC").first
+  end
 
 private
   def product_params
@@ -57,5 +69,10 @@ private
       trading_status: 1         #売買状況：売出し中（1）
     )  
   end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end  
+
 
 end
