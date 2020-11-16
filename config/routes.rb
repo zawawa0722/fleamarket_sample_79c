@@ -46,7 +46,6 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :detail
   resources :comments
-  resources :products, only: [:create,:edit,:destroy,:new,:update]
   resources :complete, only: [:index]
   
 
