@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_Product, only:[:show, :destroy, :edit, :update, :purchase, :payment]
+  before_action :set_product, only:[:show, :destroy, :edit, :update, :purchase, :payment]
 
 
   def index
@@ -80,7 +80,7 @@ private
       :shipping_fee,      #配送料 
       :shipping_day,      #発送までの日数
       :shipping_type,     #配送方法
-      :category,          #カテゴリ あとでidつける
+      :category_id,          #カテゴリ あとでidつける
       :deal_closed_date,  #取引成立日時
       images_attributes: [:image,:_destroy, :id]   #画像複数枚添付用
     )
@@ -94,10 +94,6 @@ private
   def set_product
     @product = Product.find(params[:id])
   end  
-  def product_params
-    params.require(:product).permit(
-      :category_id,
-      )
-  end
+
 end
 

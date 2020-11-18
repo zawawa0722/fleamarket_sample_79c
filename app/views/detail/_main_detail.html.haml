@@ -59,15 +59,15 @@
             %br
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .Bottom
-            = link_to glances_index_path do
-              %button{:type => "submit"}
-                商品一覧へ
-            = link_to purchase_index_path do
-              %button{:type => "submit"}
-                購入確認へ
-            = link_to new_comment_path do
-              %button{:type => "submit"}
-                コメントする
+            -# = link_to glances_index_path do
+            -#   %button{:type => "submit"}
+            -#     商品一覧へ
+            -# = link_to purchase_index_path do
+            -#   %button{:type => "submit"}
+            -#     購入確認へ
+            -# = link_to new_comment_path do
+            -#   %button{:type => "submit"}
+            -#     コメントする
       %ul.main__show__contents__links
         %li.main__show__contents__links__link 
           = link_to "#" do
@@ -80,5 +80,5 @@
       .main__show__contents__box
         .main__show__contents__box__list
           - @products.each do |item|
-            = link_to item_path(item), class: "main__contents__links__list" do
-              = image_tag item.item_images[0].image.url, size: "220x220"
+            -# = link_to item_path(item), class: "main__contents__links__list" do
+            -#   = image_tag item.item_images[0].image.url, size: "220x220"
