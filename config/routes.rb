@@ -48,7 +48,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :complete, only: [:index]
   
- 
   resources :products do
     resources :comments,  only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
