@@ -9,10 +9,11 @@
   overflow:scroll;
 }
 
-.main{
+.comments{
+  height:650px;
   margin:0 auto;
-  background-color:#f8f8f8;
-  &__contents{
+  &__field{
+    height:400px;
     padding:40px;
     margin:0 auto;
   }
