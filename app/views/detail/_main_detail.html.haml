@@ -71,6 +71,7 @@
             %br
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .Bottom
+
             -if user_signed_in? && current_user.id
               = link_to new_product_path do
                 %button{:type => "submit"}
@@ -82,6 +83,7 @@
               = link_to comments_path do
                 %button{:type => "submit"}
                   コメントページへ
+
       %ul.main__show__contents__links
         %li.main__show__contents__links__link 
           = link_to "#" do
