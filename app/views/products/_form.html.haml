@@ -1,7 +1,7 @@
 .TestField
   - if user_signed_in?
     .upper-field__navigate__right-side__register.grid-6
-      = form_with model: @product, url: product_path, local: true do |f|
+      = form_with model: @product, local: true do |f|
         .Wrapper
           = render 'layouts/error_message', model: f.object
           .Top
