@@ -26,8 +26,11 @@ class ProductsController < ApplicationController
 
 
   def destroy
-    @product.destroy
-    redirect_to("/")
+    if @product.destroy 
+      redirect_to root_path
+    else
+      render :edit, notice: "削除に失敗しました"
+    end
   end
   def create
     @product = Product.new(product_params)
