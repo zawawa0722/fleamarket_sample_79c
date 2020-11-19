@@ -24,14 +24,11 @@ class ProductsController < ApplicationController
     
   end
 
-  def destroy
-    if @product.destroy 
-      redirect_to root_path, notice: "削除が完了しました"
-    else
-      redirect_to product_path(params[:id]), notice: "権限がありません"
-    end
-  end
 
+  def destroy
+    @product.destroy
+    redirect_to("/")
+  end
   def create
     @product = Product.new(product_params)
     unless @product.save
@@ -93,8 +90,6 @@ private
 
   def set_product
     @product = Product.find(params[:id])
-
-
-
+  end
 end
 
