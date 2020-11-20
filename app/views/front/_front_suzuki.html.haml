@@ -2,12 +2,12 @@
   .upper-field__in
     .upper-field__in__main  
       %h1.upper-field__in__main__logo
-        %a(href="/")
+        = link_to '/' do
           = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
       .upper-field__in__main__search-box
-        %input#search-btn{:type => "checkbox"}/
-        %label{:for => "search-btn"}  Show search bar
-        %input#search-bar{:placeholder => "検索ワードを入力してください", :type => "text"}/
+        %input#search-btn{type: "checkbox"}/
+        %label{for: "search-btn"}  Show search bar
+        %input#search-bar{placeholder: "検索ワードを入力してください", type: "text"}/
   .upper-field__navigate
     .upper-field__navigate__left-side
       %ul.upper-field__navigate__left-side__item
@@ -509,7 +509,7 @@
       %li.upper-field__navigate__right-side__login
         - if user_signed_in?
           .upper-field__navigate__right-side__register.grid-6
-            =link_to "マイページ", "/users/#{current_user.id}"
+            =link_to "マイページ", user_path(current_user.id)
             
         - else
           .grid-6

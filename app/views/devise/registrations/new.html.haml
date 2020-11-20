@@ -1,6 +1,6 @@
 .upper-field__in__main  
   %h1.upper-field__in__main__logo
-    %a(href="/")
+    = link_to '/' do
       = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
   .head_title
@@ -63,6 +63,5 @@
       = resource.errors.full_messages_for(:birthday)[0]
   .actions
     = f.submit "Next",class:"btn"
-    //= render "devise/shared/links"
 
 
