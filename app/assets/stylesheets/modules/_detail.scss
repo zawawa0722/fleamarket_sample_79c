@@ -2,10 +2,20 @@
   box-sizing: border-box;
 }
 
+@mixin gyazo-image($width, $height) {
+  width: $width;
+  height: $height;
+  align-items:center;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
 a{
+
   font-size: 12px;
   color:#fff;
   text-decoration:none;
+  display:inline-block
 }
 
 p{
@@ -45,23 +55,22 @@ p{
           height:500px;
           width:100%;
           margin-top:15px;
-          &__image{
-            height:350px;
-            width:500px;
-            display:flex;
-            margin:0 auto;
+          &__gyazo{
+            padding: 16px 30px 0;
+          }
+          &__gyazo-image{
+            @include gyazo-image(100%, 300px);
           }
           &__sub{
             height:100px;
             width:500px;
             display:flex;
             justify-content:center;
-            margin:0 auto;
-            &__pic{
-              height:100%;
-              width:150px;
-              margin-left:10px;
-            }
+            margin:10px auto;
+          }
+          &__sub-image{
+            margin-left:10px;
+            @include gyazo-image(150px,100px);
           }
         }
         &__price{
@@ -149,28 +158,16 @@ p{
           }
         }
       }
-      &__links{
-        height:24px;
+      &__related{
+        height:70px;
         width:700px;
         margin:0 auto;
-        display:flex;
-        justify-content:space-between;
-        &__link{
-          font-size:18px;
-        }
-      }
-      &__box{
-        height:320px;
-        width: 780px;
-        margin: 26px auto;
-        display: flex;
-        justify-content: space-around;
-        &__list{
-          width: 220px;
-          background-color: #fff;
-        }
-        &_list img{
-          text-align: center;
+        &__links{
+          height:70px;
+          width:700px;
+          margin:0 auto;
+          display:flex;
+          justify-content:space-between;
         }
       }
     }

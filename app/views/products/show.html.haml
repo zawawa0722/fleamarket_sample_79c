@@ -1,34 +1,92 @@
-.display_test
-  %table 
-    %tr 
-      %th 出品者
-      -# %td= @user.name
-    %tr 
-      %th カテゴリー
-      - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
-        %td
-          = link_to "#{@category_child.name}","#"
-          %br= link_to "#{@category_grandchild.name}","#" 
-      -else
-        %td
-          = link_to "#{@category_parent.name}","#"
-          %br= link_to "#{@category_child.name}","#"
-          = link_to "#{@category_grandchild.name}","#"
-    %tr
-      %th ブランド
-      -# %td= @item.brand_name
-    %tr
-      %th 商品のサイズ
-      %td
-    %tr
-      %th 商品の状態
-      -# %td= @item.item_status
-    %tr
-      %th 配送料の負担
-      -# %td= @item.delivery_fee
-    %tr
-      %th 発送元の地域
-      -# %td= link_to "#{@item.shipping_origin}","#"
-    %tr
-      %th 発送日の目安
-      -# %td= @item.days_until_shipping
+= render "front/front_suzuki"
+.main
+  .main__show
+    .main__show__contents
+      .main__show__contents__item-box
+        %h2.main__show__contents__item-box__name
+          = @product.product_name
+        .main__show__contents__item-box__body
+          .main__show__contents__item-box__body__gyazo
+            = image_tag "#{@images.first.image}", class: "main__show__contents__item-box__body__gyazo-image"
+          .main__show__contents__item-box__body__sub
+            - @images[1..-1].each do |i|
+              = image_tag "#{i.image}", size: "160×120", class: "main__show__contents__item-box__body__sub-image"
+        .main__show__contents__item-box__price
+          = "¥#{@product.price}"
+        .main__show__contents__item-box__user-comment
+          = @product.description
+        .main__show__contents__item-box__table
+          %table 
+            %tr 
+              %th
+                出品者
+              %td
+                = @product.user.nickname
+            %tr 
+              %th カテゴリー
+              - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
+                %td
+                  = link_to "#{@category_child.name}","#"
+                  %br= link_to "#{@category_grandchild.name}","#" 
+              -else
+                %td
+                  = link_to "#{@category_parent.name}","#"
+                  %br= link_to "#{@category_child.name}","#"
+                  = link_to "#{@category_grandchild.name}","#"
+            %tr
+              %th
+                ブランド
+              %td
+                = @product.brand
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = @product.size
+            %tr
+              %th
+                商品の状態
+              %td
+                = @product.product_status
+            %tr
+              %th
+                配送料
+              %td
+                = @product.shipping_fee
+            %tr
+              %th
+                都道府県
+              %td
+                = link_to "#{@product.prefecture.id}"
+            %tr
+              %th 
+                発送までの日数
+              %td
+                = @product.shipping_day
+      .main__show__contents__comment-box
+        .main__show__contents__comment-box__field
+          %textarea.main__show__contents__comment-box__field__form
+          %p.main__show__contents__comment-box__field__caution
+            *相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .Bottom
+            -if user_signed_in? && current_user.id
+              = link_to edit_product_path(@product) do
+                %button{:type => "submit"}
+                  商品編集へ
+            -else
+              = link_to purchase_path(@product) do
+                %button{:type => "submit"}
+                  購入確認へ
+      .main__show__contents__related
+        %ul.main__show__contents__related__links
+          %li
+            = link_to "#", class: "related__link" do
+              .main__show__contents__related__link-weapper
+                %p 前の商品へ
+          %li
+            = link_to "#", class: "related__link" do
+              .main__show__contents__related__link-weapper
+                %p 後の商品へ
+= render "front/under_suzuki"

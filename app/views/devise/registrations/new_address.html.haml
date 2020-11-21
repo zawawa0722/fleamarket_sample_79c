@@ -9,7 +9,7 @@
     .title_field_box
       = f.label :郵便番号
       %span.indispensable 必須
-      = f.text_field :zipcode, class: "field-input"
+      = f.text_field :zipcode, class: "field-input", placeholder: "例：1234567"
     .input_errors
       = @address.errors.full_messages_for(:zipcode)[0]
   .field_type1
