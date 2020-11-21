@@ -83,9 +83,11 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
     t.timestamp "deal_closed_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
+
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["seller_id"], name: "index_products_on_seller_id"
   end
@@ -113,4 +115,5 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users", column: "buyer_id"
   add_foreign_key "products", "users", column: "seller_id"
+
 end

@@ -89,6 +89,7 @@ private
     )
     .merge(
       seller_id: current_user.id,
+
       trading_status: 1         #売買状況：売出し中（1）
     )  
   end

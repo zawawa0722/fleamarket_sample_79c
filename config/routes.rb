@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:index, :new, :create, :destory, :show] do
+  resources :card do
     collection do
       get 'complete'
     end
