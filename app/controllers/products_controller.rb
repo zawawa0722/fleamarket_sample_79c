@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       render :edit, notice: "削除に失敗しました"
     end
   end
+  
   def create
     @product = Product.new(product_params)
     unless @product.save
