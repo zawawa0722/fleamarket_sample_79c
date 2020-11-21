@@ -88,7 +88,8 @@ private
       images_attributes: [:image,:_destroy, :id]   #画像複数枚添付用
     )
     .merge(
-      saler_id: current_user.id,
+      seller_id: current_user.id,
+
       trading_status: 1         #売買状況：売出し中（1）
     )  
   end

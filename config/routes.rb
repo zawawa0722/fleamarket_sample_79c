@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :purchase do
     collection do
       get 'complete'
