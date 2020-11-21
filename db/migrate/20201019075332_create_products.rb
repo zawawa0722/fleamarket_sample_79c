@@ -17,6 +17,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.references :category , null: false, foreign_key: true
       t.timestamp :deal_closed_date
       t.timestamps
+      t.integer :buyer_id
     end
   end
 end

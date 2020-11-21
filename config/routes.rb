@@ -25,6 +25,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :glances
+  get 'index'
+
+
+
   resources :purchase do
     collection do
       get 'complete'
@@ -35,10 +40,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:new, :create, :destory, :show] do
+  resources :card, only: [:index, :new, :create, :destory, :show] do
     collection do
-      delete 'destroy'
-      post 'new'
       get 'complete'
     end
   end

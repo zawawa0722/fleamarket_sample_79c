@@ -1,7 +1,7 @@
 class CardController < ApplicationController
 
   before_action :return_to_root
-  before_action :set_card, only: [:new, :desroy, :purchase, :show]
+  before_action :set_card, only: [:new, :desroy, :purchase, :show, :index]
 
   require "payjp"
 
@@ -26,7 +26,7 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to purchase_index_path
+        redirect_to action: "index"
       else
         redirect_to action: "new"
       end
