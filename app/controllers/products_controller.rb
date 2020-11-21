@@ -46,8 +46,11 @@ class ProductsController < ApplicationController
 
   def show
     @images = @product.images
-    @category_id = @product.category_id
     @category_parent_array = Category.where(ancestry: nil)
+    @category_grandchild = @product.category
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
+    
   end
 
   def edit
