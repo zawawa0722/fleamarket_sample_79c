@@ -31,7 +31,7 @@ class PurchaseController < ApplicationController
 
   def create
     # テスト用 商品詳細表示実装完了後削除
-    @product = Product.find(3)
+    @product = Product.find(2)
 
     if Payjp::Charge.create(
       amount: @product.price,
