@@ -25,10 +25,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :glances
-  get 'index'
-
-
 
   resources :purchase do
     collection do
