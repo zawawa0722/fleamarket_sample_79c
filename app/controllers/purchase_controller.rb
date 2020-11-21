@@ -9,13 +9,13 @@ class PurchaseController < ApplicationController
 
   def index
     # テスト用 商品詳細表示実装完了後削除
-    @product = Product.find(3)
+    @product = Product.find(2)
     @address = Address.find(current_user.id)
     @user = User.find(current_user.id)
 
     if @card.blank?
       flash[:alert] = '購入前にカードを登録してください'
-      redirect_to card_new_path
+      redirect_to new_card_path
     else
       set_customer
       set_card_infomation
