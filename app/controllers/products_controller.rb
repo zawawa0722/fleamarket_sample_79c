@@ -45,10 +45,9 @@ class ProductsController < ApplicationController
 
 
   def show
+    @images = @product.images
     @category_id = @product.category_id
-    @category_parent = Category.find(@category_id).parent.parent
-    @category_child = Category.find(@category_id).parent
-    @category_grandchild = Category.find(@category_id)
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def edit
@@ -94,5 +93,6 @@ private
   def set_product
     @product = Product.find(params[:id])
   end
+
 end
 

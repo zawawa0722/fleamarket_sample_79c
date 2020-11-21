@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+@mixin gyazo-image($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
 a{
   font-size: 12px;
   // color:#fff;
@@ -45,11 +52,11 @@ p{
           height:500px;
           width:100%;
           margin-top:15px;
-          &__image{
-            height:350px;
-            width:500px;
-            display:flex;
-            margin:0 auto;
+          &__gyazo{
+            padding: 16px 30px 0;
+          }
+          &__gyazo-image{
+            @include gyazo-image(100%, 346px);
           }
           &__sub{
             height:100px;
@@ -57,10 +64,11 @@ p{
             display:flex;
             justify-content:center;
             margin:0 auto;
-            &__pic{
-              height:100%;
-              width:150px;
+            &__images{
               margin-left:10px;
+            }
+            &__sub-image{
+              @include gyazo-image(100px,60px);
             }
           }
         }
