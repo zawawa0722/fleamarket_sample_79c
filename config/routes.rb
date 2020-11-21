@@ -25,8 +25,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :glances
-  get 'index'
 
 
 
