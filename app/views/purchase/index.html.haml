@@ -1,7 +1,8 @@
 .Content
   .Content__Whole
-    .Content__Header
-      = image_tag 'logo.png', alt: 'アプリアイコン', height: '50px', width: '180px', class: 'apply-icon'
+    = link_to "/" do
+      .Content__Header
+        = image_tag 'logo.png', alt: 'アプリアイコン', height: '50px', width: '180px', class: 'apply-icon'
     .Content__Main
       .Content__Main__Text 購入内容の確認
       .Content__Main__Item-infomation
@@ -15,16 +16,17 @@
       .Content__Main__Payment
         .Content__Main__Payment__Text 
           支払い方法
-          .Content__Main__Payment__Card 
-            クレジットカード
-            = "**** **** **** " + @card_information.last4
-          .Content__Main__Payment__Card__Information
-            有効期限
-            - exp_month = @card_information.exp_month.to_s
-            - exp_year = @card_information.exp_year.to_s.slice(2,3)
-            = exp_month + " / " + exp_year
+          .Content__Main__Payment__List
+            .Content__Main__Payment__Card 
+              クレジットカード
+              = "**** **** **** " + @card_information.last4
+            .Content__Main__Payment__Card__Information
+              有効期限
+              - exp_month = @card_information.exp_month.to_s
+              - exp_year = @card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
         .Content__Main__Payment__Choise
-          = link_to new_card_path, target: "_blank" do
+          = link_to new_card_path do
             %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
               = icon('fas', 'keyboard', class: 'keyboard-icon')
               カード情報を入力する
