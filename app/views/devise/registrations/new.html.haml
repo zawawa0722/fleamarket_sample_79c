@@ -1,6 +1,6 @@
 .upper-field__in__main  
   %h1.upper-field__in__main__logo
-    %a(href="/")
+    = link_to '/' do
       = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
   .head_title
@@ -49,7 +49,7 @@
       = f.label :フリガナ
       %span.indispensable 必須
       = f.text_field :family_name_kana, class: "field-input-full", placeholder: "セイ"
-      = f.text_field :first_name_kana, class: "field-input-full", placeholder: "ナ"
+      = f.text_field :first_name_kana, class: "field-input-full", placeholder: "メイ"
     .input_errors
       = resource.errors.full_messages_for(:family_name_kana)[0]
       = resource.errors.full_messages_for(:first_name_kana)[0] 
@@ -63,6 +63,5 @@
       = resource.errors.full_messages_for(:birthday)[0]
   .actions
     = f.submit "Next",class:"btn"
-    //= render "devise/shared/links"
 
 

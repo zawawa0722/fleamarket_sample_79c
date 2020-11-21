@@ -121,8 +121,9 @@
               .Main__right__ThirdContent__Category
                 .Main__right__ThirdContent__Category__Left
                   %p カテゴリー(必須)
+                
                 .Main__right__ThirdContent__Category__Right
-                  = f.text_field :category,placeholder: "10文字以内で入力"
+                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
               .Main__right__ThirdContent__Brand
                 .Main__right__ThirdContent__Brand__Left
                   %p ブランド（任意）
@@ -168,4 +169,12 @@
           %button{:type => "submit"}
             確認
             %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
+        .Bottom
+          %button{:type => "submit"}
+            = link_to '削除', product_path(@product.id), method: :delete
+            %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
+          
+
+
+    .aago
       = render "front/under_suzuki"

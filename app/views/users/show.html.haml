@@ -1,23 +1,49 @@
-.LogoField  
-  = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
+.upper-field
+  .upper-field__in
+    .upper-field__in__main  
+      %h1.upper-field__in__main__logo
+        = link_to '/' do
+          = image_tag 'logo.png', alt: 'トップロゴ', height: '40.55px', width: '160px', class: ''
+      .upper-field__in__main__search-box
+        %input#search-btn{type: "checkbox"}/
+        %label{for: "search-btn"}  Show search bar
+        %input#search-bar{placeholder: "検索ワードを入力してください", type: "text"}/
+  .upper-field__navigate
+    .upper-field__navigate__left-side
+      %ul.upper-field__navigate__left-side__item
+    %ul.upper-field__navigate__right-side
+      %li.upper-field__navigate__right-side__login
+        - if user_signed_in?
+          .upper-field__navigate__right-side__register.grid-6
+            =link_to "マイページ", user_path(current_user.id)
+        - else
+          .grid-6
+            = link_to "新規登録", new_user_registration_path, class: "post"
+      %li.upper-field__navigate__right-side__register
+        - if user_signed_in?
+          .upper-field__navigate__right-side__login.grid-6
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          .grid-6
+            = link_to "ログイン", new_user_session_path, class: "post"
 .MypageField
   .flip
     .flip-inner
       .front
         .details
           %div
-            Nick Name
+            Nick Name :
             = current_user.nickname
           %hr/
           .role
-            Email
+            Email :
             = current_user.email
           .contact
-            Name
+            Name :
             = current_user.family_name
             = current_user.first_name
           .contact
-            Birthday
+            Birthday :
             = current_user.birthday
       .back
         .social
@@ -41,7 +67,7 @@
               %td
                 = image_tag "syougatsu2_omijikuji2.png", class:"socialicon4"
                 .sociallink
-                  %label
+                  %label.omikuji
                     %span 今日の運勢
                     %input{:name => "checkbox", :type => "checkbox"}/
                     #popup
