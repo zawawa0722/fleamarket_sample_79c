@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     &__bar {
-      width: 70%;
+      width: 90%;
       height: 50px;
       background-color: #3ccace;
       color: #ffffff;
@@ -24,16 +24,18 @@
       letter-spacing: 10px;
     }
     .Pickup__Contents__Box {
-      width: 78%;
+      width: 1060px;
       height: auto;
+      margin: auto;
     }
 
     .Pickup__Contents__Lists {
       height: 100%;
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       &__List1 {
-        width: 100%;
+        width: 78%;
         margin-right: 20px;
         &__Introduction {
           height: 40%;
