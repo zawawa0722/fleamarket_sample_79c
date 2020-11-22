@@ -75,10 +75,10 @@
               = link_to edit_product_path(@product) do
                 %button{:type => "submit"}
                   商品編集へ
-            -else
-              = link_to purchase_path(@product) do
+              = link_to product_purchases_path(@product) do
                 %button{:type => "submit"}
                   購入確認へ
+            -else
       .main__show__contents__related
         %ul.main__show__contents__related__links
           %li
