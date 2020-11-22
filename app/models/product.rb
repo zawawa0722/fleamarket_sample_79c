@@ -2,11 +2,10 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   has_many :images, dependent: :destroy
-  belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
   belongs_to :category
-  belongs_to :buyer, class_name: "User"
   belongs_to :seller, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional: true
 
   enum size: { XS: 0, S: 1, M: 2, L: 3, XL: 4, XL以上: 5, フリーサイズ: 6 }
   enum product_status: { 新品・未使用: 0, 未使用に近い: 1, 目立った傷や汚れなし: 2, やや傷や汚れあり: 3, 傷や汚れあり: 4, 全体的に状態が悪い: 5 }
