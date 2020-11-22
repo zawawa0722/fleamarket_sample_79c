@@ -12,7 +12,7 @@
     .upper-field__navigate__left-side
       %ul.upper-field__navigate__left-side__item
         %li<
-          %a(href="#") カテゴリー
+          = link_to "カテゴリー", "#" , class:"CategoryLinks"
           %ul
             %li<
               %a(href="#") レディース
@@ -508,7 +508,7 @@
     %ul.upper-field__navigate__right-side
       %li.upper-field__navigate__right-side__login
         - if user_signed_in?
-          .upper-field__navigate__right-side__register.grid-6
+          .upper-field__navigate__right-side__register
             =link_to "マイページ", user_path(current_user.id)
             
         - else
@@ -516,7 +516,7 @@
             = link_to "新規登録", new_user_registration_path, class: "post"
       %li.upper-field__navigate__right-side__register
         - if user_signed_in?
-          .upper-field__navigate__right-side__login.grid-6
+          .upper-field__navigate__right-side__login
             = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           .grid-6
