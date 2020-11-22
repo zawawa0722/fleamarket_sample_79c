@@ -1,6 +1,6 @@
-class PurchaseController < ApplicationController
+class PurchasesController < ApplicationController
 
-  # before_action :set_product
+  before_action :set_product 
   before_action :set_card
   before_action :set_api_key
 
@@ -8,14 +8,12 @@ class PurchaseController < ApplicationController
 
 
   def index
-    # テスト用 商品詳細表示実装完了後削除
-    @product = Product.find(3)
-    @address = Address.find(current_user.id)
+    @images = @product.images
     @user = User.find(current_user.id)
 
     if @card.blank?
       flash[:alert] = '購入前にカードを登録してください'
-      redirect_to card_new_path
+      redirect_to new_card_path
     else
       set_customer
       set_card_infomation
@@ -30,36 +28,21 @@ class PurchaseController < ApplicationController
   end
 
   def create
-    # テスト用 商品詳細表示実装完了後削除
-    @product = Product.find(3)
-
+    @images = @product.images
     if Payjp::Charge.create(
       amount: @product.price,
       customer: @card.customer_id, # 顧客ID
       currency: 'jpy'
     )
       @product.save(buyer_id: current_user.id) #productテーブルのbuyer_idカラムにcurrent_userのidを保存
-      redirect_to action: 'complete' #購入が成功したら完了画面へ遷移
     else
       redirect_to new_card_path #失敗したらカード登録画面に遷移
     end
   end
 
-  def complete
-  end
-
-  # def edit
-  #   @product = Product.find(3, buyer_id: current_user.id)
-  # end
-
-  # def update
-  #   @product = Product.find(3, buyer_id: current_user.id)
-  #   @product.update
-  # end
-
   private
     def set_product #商品情報と配送先住所の取得
-      @product = Product.find(params[:id])
+      @product = Product.find(params[:product_id])
       @address = Address.find(current_user.id)
     end
 
@@ -80,11 +63,25 @@ class PurchaseController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:product_id, :price
+      params.require(:product).permit(
+        :product_name,      #商品名
+        :description,       #商品説明   
+        :price,             #価格
+        :brand,             #ブランド名 あとでidつける
+        :product_status,    #商品の状態
+        :prefecture_id,     #都道府県
+        :size,              #サイズ
+        :shipping_fee,      #配送料 
+        :shipping_day,      #発送までの日数
+        :shipping_type,     #配送方法
+        :category_id,          #カテゴリ あとでidつける
+        :deal_closed_date,  #取引成立日時
+        images_attributes: [:image,:_destroy, :id]   #画像複数枚添付用
       )
       .merge(
-        user_id: current_user.id,
-      )
-    end
+        seller_id: current_user.id,
+        trading_status: 1         #売買状況：売出し中（1）
+      )  
+    end  
   end
 

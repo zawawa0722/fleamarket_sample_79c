@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       render :edit, notice: "削除に失敗しました"
     end
   end
+  
   def create
     @product = Product.new(product_params)
     unless @product.save
@@ -46,8 +47,10 @@ class ProductsController < ApplicationController
 
   def show
     @images = @product.images
-    @category_id = @product.category_id
     @category_parent_array = Category.where(ancestry: nil)
+    @category_grandchild = @product.category
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
   end
 
   def edit
@@ -84,7 +87,7 @@ private
       images_attributes: [:image,:_destroy, :id]   #画像複数枚添付用
     )
     .merge(
-      user_id: current_user.id,
+      seller_id: current_user.id,
       trading_status: 1         #売買状況：売出し中（1）
     )  
   end

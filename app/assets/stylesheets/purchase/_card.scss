@@ -118,18 +118,27 @@ $main-color: #3ccace;
     font-weight: bold;
   }
   &__box {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #3ccace;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+  }
+  &__box2 {
+    display: flex;
   }
   &__button {
     height: 60px;
-    width: 400px;
+    width: 150px;
     background-color: $main-color;
     border-style: none;
     border-radius: 5px;
     color: white;
-    margin: 50px 0;
+    margin: 50px 20px;
     cursor: pointer;
   }
 }

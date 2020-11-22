@@ -3,9 +3,8 @@
     = image_tag 'logo.png', alt: ',ロゴ', height: '50px', width: '170px', class: 'logo-complete'
   .Complete__Contents__Box
     %h1 登録が完了しました！
-    = link_to "/" do
-      %button{type: "submit", class: "Conmplete__Contents__Box__Button"}
-        トップページへ戻る
-        = icon('fas', 'door-open', class: 'door-icon')
-      
+    = link_to "/"  do
+      %button{type: "submit", class: "card__button"}
+        .button__text 戻る
+    
     

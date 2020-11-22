@@ -1,12 +1,19 @@
 .card
   .card__text 登録クレジットカード情報
   .card__box
+    クレジットカード番号
     %br
     = "**** **** **** " + @default_card_information.last4
+    %br
+    有効期限
     %br
     - exp_month = @default_card_information.exp_month.to_s
     - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
     = exp_month + " / " + exp_year
-    = link_to card_index_path(card_id: @card.id), method: :delete do
+  .card__box2
+    = link_to card_path(id: @card.id), method: :delete do
       %button{type: "submit", class: "card__button"}
         .button__text 削除する
+    = link_to "/" do
+      %button{type: "submit", class: "card__button"}
+        .button__text 戻る

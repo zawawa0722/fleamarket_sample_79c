@@ -9,9 +9,8 @@
           .main__show__contents__item-box__body__gyazo
             = image_tag "#{@images.first.image}", class: "main__show__contents__item-box__body__gyazo-image"
           .main__show__contents__item-box__body__sub
-            .main__show__contents__item-box__body__sub-images
-              - @images[1..-1].each do |i|
-                = image_tag "#{i.image}", size: "160×120", class: "main__show__contents__item-box__body__sub-image"
+            - @images[1..-1].each do |i|
+              = image_tag "#{i.image}", size: "160×120", class: "main__show__contents__item-box__body__sub-image"
         .main__show__contents__item-box__price
           = "¥#{@product.price}"
         .main__show__contents__item-box__user-comment
@@ -27,13 +26,13 @@
               %th カテゴリー
               - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
                 %td
-                  = link_to "#{@category_child}","#"
-                  %br= link_to "#{@category_id}","#" 
+                  = link_to "#{@category_child.name}","#"
+                  %br= link_to "#{@category_grandchild.name}","#" 
               -else
                 %td
-                  = link_to "#{@category_id}","#"
-                  %br= link_to "#{@category_id}","#"
-                  = link_to "#{@category_id}","#"
+                  = link_to "#{@category_parent.name}","#"
+                  %br= link_to "#{@category_child.name}","#"
+                  = link_to "#{@category_grandchild.name}","#"
             %tr
               %th
                 ブランド
@@ -58,7 +57,7 @@
               %th
                 都道府県
               %td
-                = link_to "#{@product.prefecture_id}"
+                = link_to "#{@product.prefecture.id}"
             %tr
               %th 
                 発送までの日数
@@ -76,19 +75,18 @@
               = link_to edit_product_path(@product) do
                 %button{:type => "submit"}
                   商品編集へ
-            -else
-              = link_to purchase_index_path do
+              = link_to product_purchases_path(@product) do
                 %button{:type => "submit"}
                   購入確認へ
-      %ul.main__show__contents__links
-        %li.main__show__contents__links__link 
-          = link_to "#" do
-            = icon('fas','angle-left' )
-            %p 前の商品
-        %li.main__show__contents__links__link 
-          = link_to "#" do
-            = icon('fas', 'angle-right')
-            %p 後の商品
-      .main__show__contents__box
-        .main__show__contents__box__list
+            -else
+      .main__show__contents__related
+        %ul.main__show__contents__related__links
+          %li
+            = link_to "#", class: "related__link" do
+              .main__show__contents__related__link-weapper
+                %p 前の商品へ
+          %li
+            = link_to "#", class: "related__link" do
+              .main__show__contents__related__link-weapper
+                %p 後の商品へ
 = render "front/under_suzuki"
