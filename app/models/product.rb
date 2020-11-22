@@ -23,7 +23,7 @@ class Product < ApplicationRecord
   validates :shipping_day,  presence: { message: "を入力してください"}
   validates :shipping_type,  presence: { message: "を入力してください"}
   validates :shipping_fee,  presence: { message: "を入力してください"}
-  validates :category,  presence: { message: "を入力してください"}
+  validates :category_id,  presence: { message: "を入力してください"}
   validates :trading_status,  presence: { message: "を入力してください"}
   validates :seller_id,  presence: { message: "を入力してください"}
 
