@@ -1,7 +1,7 @@
 @import "modules/Banner";
 @import "modules/Pickup_contents";
-@import "modules/front";
-@import "modules/products";
+@import "modules/front.scss";
+@import "modules/products.scss";
 @import "modules/top_ozawa";
 @import "reset";
 @import "modules/flash";
@@ -19,5 +19,10 @@
 @import "purchase/complete";
 @import "modules/soldout";
 @import "purchase/card";
-@import "modules/slick-theme";
-@import "modules/slick"; 
+@import "modules/slick-theme.scss";
+@import "modules/slick.scss"; 
+@import "modules/slick.css"; 
+@import "modules/slick-theme.css"; 
+@import "modules/front.css"; 
+@import "modules/slick-theme.scss";
+

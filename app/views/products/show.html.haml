@@ -75,6 +75,7 @@
               = link_to edit_product_path(@product) do
                 %button{:type => "submit"}
                   商品編集へ
+
             -elsif user_signed_in? && current_user.id != @product.seller_id
               = link_to purchase_path(@product) do
                 %button{:type => "submit"}
@@ -83,6 +84,7 @@
               = link_to purchase_path(@product) do
                 %button{:type => "submit"}
                   購入確認へ
+            -else
       .main__show__contents__related
         %ul.main__show__contents__related__links
           %li

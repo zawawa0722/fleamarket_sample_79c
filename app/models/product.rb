@@ -26,7 +26,6 @@ class Product < ApplicationRecord
   validates :category_id,  presence: { message: "を入力してください"}
   validates :trading_status,  presence: { message: "を入力してください"}
   validates :seller_id,  presence: { message: "を入力してください"}
-
   validates_associated :images
   validates :images, presence: {message: "を最低1枚選択してください"}
 

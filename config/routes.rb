@@ -16,43 +16,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, except: :show do
-    resources :purchase do
-      member do
-        get "index"
-        post "create"
-      end
+  resources :products do
+    resources :purchases, only: [:index, :create] do
     end
   end
 
-
-  resources :purchase do
-    collection do
-      get 'complete'
-    end
-
-    member do
-      post 'products'
-    end
-  end
-
-  resources :card do
-    collection do
-      get 'complete'
-    end
-  end
+  resources :card, only: [:new, :create, :show, :destroy]
 
   resources :users, only: :show
   resources :detail
   resources :comments
   resources :complete, only: [:index]
-  
   resources :products do
     resources :comments,  only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
     collection do
       get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      get 'products', to: 'products#index'
     end
   end
 end

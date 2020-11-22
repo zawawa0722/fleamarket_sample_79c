@@ -41,11 +41,12 @@ $border-Line: 1px solid whitesmoke;
       border-bottom: $border-Line;
       &__Image {
         border-radius: 20px;
-        width: 40%;
+        width: 200px;
+        margin-right: 60px;
       }
       &__Detail {
         height: 150px;
-        width: 60%;
+        width: 50%;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -104,6 +105,8 @@ $border-Line: 1px solid whitesmoke;
         text-align: center;
         font-size: 17px;
         margin: 10px;
+        display: flex;
+        align-items: center;
       }
     }
     &__User-infomation {

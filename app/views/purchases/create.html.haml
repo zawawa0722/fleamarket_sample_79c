@@ -3,6 +3,14 @@
     = image_tag 'logo.png', alt: ',ロゴ', height: '50px', width: '170px', class: 'logo-complete'
   .Complete__Contents__Box
     %h1 購入が完了しました！
+    .Content__Main__Item-infomation
+      = image_tag "#{@images.first.image}", alt: '商品画像', height: '150px', width: '150px', class: 'Content__Main__Item-infomation__Image'
+      .Content__Main__Item-infomation__Detail
+        .Content__Main__Item-infomation__Item-name
+          = @product.product_name
+        .Content__Main__Item-infomation__Item-price
+          = @product.price
+          円
     %h2 商品の発送まで今しばらくお待ち下さい。
     = link_to "/" do
       %button{type: "submit", class: "Conmplete__Contents__Box__Button"}

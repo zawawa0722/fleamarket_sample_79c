@@ -8,7 +8,6 @@
   height: 116px;
   position: relative;
   border: 1px solid #ffffff;
-  background-color: #ffffff;
   text-align: center;
 }
 
@@ -133,17 +132,17 @@
 }
 
 //削除ボタン（第1引数：高さ 第2引数：位置 第3引数：padding縦 第4引数：padding横  第5引数：文字の大きさ ）
-@mixin DeleteBtn($top,$left,$height,$width,$font-size){
-  position: absolute;
+@mixin DeleteBtn{
+  width:60px;
+  height:60px;
+  text-align: center;
   z-index: 10;
-  top:$top;
-  left: $left;
   border: 1px solid white;
-  padding: $height $width;
-  font-size: $font-size;
+  font-size:40px;
   color: white;
   background: #3CCACE;
   Cursor:pointer;
+  position: absolute;
 }
 
 // ここからページコンテンツ
@@ -193,6 +192,7 @@
       margin-bottom: 15px;
       width: 370px;
       &__img {
+        position: relative;
         width: 370px;
         height: 370px;
         border: 1px solid #3CCACE;
@@ -237,12 +237,14 @@
     }
       //新規画像登録時のバツアイコン（1枚目）
       #Delete_btn0{
-        @include DeleteBtn(225px,553px,10px,30px,34px);  
+        @include DeleteBtn;  
+        top:92px;
       }
 
       //既存画像差し替え時のバツアイコン（1枚目）
       #Delete_btn_replacement_nil0{
-        @include DeleteBtn(225px,553px,10px,30px,34px);  
+        @include DeleteBtn;  
+        top:92px;
       }    
 
     &__SecondContent {
@@ -251,29 +253,37 @@
 
       input{
         top: 100px;
-        
+        display:none;
       }
 
       //新規画像登録時のバツアイコン（2枚目〜4枚目）
       #Delete_btn_replacement_nil1{
-        @include DeleteBtn(auto,325px,0px,15px,24px);
+        @include DeleteBtn;
       }
       #Delete_btn_replacement_nil2{
-        @include DeleteBtn(auto,450px,0px,15px,24px);
+        @include DeleteBtn;
+        position: absolute;
+        margin-left:131px ;
+
       }
       #Delete_btn_replacement_nil3{
-        @include DeleteBtn(auto,570px,0px,15px,24px);
+        @include DeleteBtn;
+        margin-left:262px ;
+        
       }
 
       //既存画像差し替え時のバツアイコン（2枚目〜4枚目）
       #Delete_btn1{
-        @include DeleteBtn(auto,325px,0px,15px,24px);
+        @include DeleteBtn;
+
       }
       #Delete_btn2{
-        @include DeleteBtn(auto,450px,0px,15px,24px);
+        @include DeleteBtn;
+        
       }
       #Delete_btn3{
-        @include DeleteBtn(auto,570px,0px,15px,24px);
+        @include DeleteBtn;
+        
       }
 
 
@@ -548,11 +558,18 @@
           @include RightBox;
         }
         &__Right {
-          @include RightThird ;
-          @include SubmitBox;
-          .select_line {
-            @include SelectBox;
-            width: 178px;
+          margin-top: 10px;
+          font-size: 14px;
+          &__input {
+            border: none;
+            text-align: left;
+            width: 200px;
+            background: #ffffff;
+            font-size: 14px;
+            font-weight: normal;
+            padding-left: 14px;
+            height: 35px;
+            border: solid 1px lightgray;
           }
         }
       }
