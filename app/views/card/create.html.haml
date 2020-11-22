@@ -3,7 +3,7 @@
     = image_tag 'logo.png', alt: ',ロゴ', height: '50px', width: '170px', class: 'logo-complete'
   .Complete__Contents__Box
     %h1 登録が完了しました！
-    = link_to purchase_index_path(card_id: @card.id)  do
+    = link_to "/"  do
       %button{type: "submit", class: "card__button"}
         .button__text 戻る
     

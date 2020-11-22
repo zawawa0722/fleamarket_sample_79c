@@ -128,14 +128,17 @@ $main-color: #3ccace;
     margin-bottom: 10px;
     padding: 10px 0;
   }
+  &__box2 {
+    display: flex;
+  }
   &__button {
     height: 60px;
-    width: 400px;
+    width: 150px;
     background-color: $main-color;
     border-style: none;
     border-radius: 5px;
     color: white;
-    margin: 50px 0;
+    margin: 50px 20px;
     cursor: pointer;
   }
 }
