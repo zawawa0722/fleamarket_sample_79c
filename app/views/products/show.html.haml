@@ -21,7 +21,7 @@
               %th
                 出品者
               %td
-                = @product.user.nickname
+                -# = @product.user.nickname
             %tr 
               %th カテゴリー
               - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
