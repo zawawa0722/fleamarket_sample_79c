@@ -32,6 +32,9 @@
   &__List1 {
     width: 20%;
     margin-right: 20px;
+    &__image {
+      border-radius: 5px;
+    }
     &__Introduction {
       margin-top: 5px;
       width: 180px;
@@ -40,6 +43,7 @@
       align-items: center;
       justify-content: space-around;
       background-color: whitesmoke;
+      border-radius: 5px;
       &__Left {
         width: 50%;
         padding-left: 10px;
