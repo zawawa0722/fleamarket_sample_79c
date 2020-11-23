@@ -9,7 +9,6 @@
           - if product.buyer_id.nil?
             .Pickup__Contents__List1
               = link_to product_path(product) ,class: 'Item__Infomation' do
-
                 = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '180px', class: 'Pickup__Contents__List1__image'
               .Pickup__Contents__List1__Introduction
                 %ul.Pickup__Contents__List1__Introduction__Left
