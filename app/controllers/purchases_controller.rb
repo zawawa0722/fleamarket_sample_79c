@@ -34,7 +34,7 @@ class PurchasesController < ApplicationController
       customer: @card.customer_id, # 顧客ID
       currency: 'jpy'
     )
-      @product.save(buyer_id: current_user.id) #productテーブルのbuyer_idカラムにcurrent_userのidを保存
+      @product.update(buyer_id: current_user.id) #productテーブルのbuyer_idカラムにcurrent_userのidを保存
     else
       redirect_to new_card_path #失敗したらカード登録画面に遷移
     end
