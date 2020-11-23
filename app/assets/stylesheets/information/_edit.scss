@@ -1,0 +1,37 @@
+.edit{
+  height: 60px ;
+  width:700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border: solid  #3CCACE;
+  background-color: rgb(8, 136, 187);
+}
+
+.edit_field{
+  @include square;
+  width:680px;
+  height: 120px;
+  &_box{
+    width: 600px;
+    height: 50px;
+    display: flex;
+    margin: 30px 30px 0 30px;
+  }
+}
+
+
+.actions_edit{
+
+  
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  &_cancel{
+    padding-top:50px ;
+    text-align: center;
+  }
+}
