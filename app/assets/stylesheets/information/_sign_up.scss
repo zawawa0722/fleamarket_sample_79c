@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 @mixin square{
   margin: 0 auto;
   margin-top: 5px;
@@ -123,6 +124,7 @@ label{
   font-weight: bold;
   text-align: center;
   font-size: 20px;
+  margin: 20px;
   
 }
 
