@@ -21,7 +21,7 @@
               %th
                 出品者
               %td
-                = @product.user.nickname
+                -# = @product.user.nickname
             %tr 
               %th カテゴリー
               - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
@@ -75,7 +75,9 @@
               = link_to edit_product_path(@product) do
                 %button{:type => "submit"}
                   商品編集へ
-
+              = link_to product_purchases_path(@product) do
+                %button{:type => "submit"}
+                  購入確認へ
             -elsif user_signed_in? && current_user.id != @product.seller_id
               = link_to purchase_path(@product) do
                 %button{:type => "submit"}
@@ -84,7 +86,6 @@
               = link_to purchase_path(@product) do
                 %button{:type => "submit"}
                   購入確認へ
-            -else
       .main__show__contents__related
         %ul.main__show__contents__related__links
           %li

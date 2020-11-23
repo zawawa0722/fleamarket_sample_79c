@@ -33,10 +33,10 @@
       .Pickup__Contents__Lists
         //List1
         - @products.each do |product|
-          - if product.user_id.nil?
+          - if product.buyer_id.nil?
             .Pickup__Contents__List1
               = link_to product_path(product) ,class: 'Item__Infomation' do
-                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '225px', class: 'Pickup__Contents__List1__image'
+                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '180px', class: 'Pickup__Contents__List1__image'
               .Pickup__Contents__List1__Introduction
                 %ul.Pickup__Contents__List1__Introduction__Left
                   %li.Pickup__Contents__List1__Introduction__Left__Name 
@@ -66,9 +66,3 @@
               //SOLD OUT表記
               .items-box_photo__sold
                 .items-box_photo__sold__inner SOLD
-.previews
-  .slider
-    = image_tag '田中1.jpg'
-    = image_tag '田中1.jpg'
-    = image_tag '田中1.jpg'
-    = image_tag '田中1.jpg'

@@ -38,6 +38,8 @@ ja:
         password: ※パスワード
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
+        new_password: 真・パスワード
+        new_email: 真・メールアドレス
       address:
         zipcode: ※郵便番号
         prefectures: ※都道府県
