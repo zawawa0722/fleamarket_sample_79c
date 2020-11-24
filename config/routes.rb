@@ -22,12 +22,6 @@ Rails.application.routes.draw do
   resources :card, only: [:new, :create, :show, :destroy]
 
   resources :users, only: :show
-
-  resources :detail
-
-  resources :comments
-
-  resources :complete, only: [:index]
   
   resources :products do
     resources :purchases, only: [:index, :create]
