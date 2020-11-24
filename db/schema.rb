@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
     t.bigint "seller_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["seller_id"], name: "fk_rails_82f3b66938"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -106,5 +107,4 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users", column: "buyer_id"
   add_foreign_key "products", "users", column: "seller_id"
-
 end
