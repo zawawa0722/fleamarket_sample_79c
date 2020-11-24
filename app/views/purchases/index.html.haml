@@ -25,11 +25,11 @@
               - exp_month = @card_information.exp_month.to_s
               - exp_year = @card_information.exp_year.to_s.slice(2,3)
               = exp_month + " / " + exp_year
-        .Content__Main__Payment__Choise
-          = link_to new_card_path do
-            %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
-              = icon('fas', 'keyboard', class: 'keyboard-icon')
-              カード情報を確認する
+        -# .Content__Main__Payment__Choise
+          -# = link_to new_card_path do
+          -#   %button{type: "submit", class: "Content__Main__Purchase-btn__Box1"}
+          -#     = icon('fas', 'keyboard', class: 'keyboard-icon')
+          -#     カード情報を確認する
       .Content__Main__User-infomation
         .Content__Main__User-infomation__Box
           .Content__Main__User-infomation__Delivery-text  配送先
