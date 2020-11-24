@@ -13,15 +13,18 @@
               = image_tag "#{i.image}", size: "160×120", class: "main__show__contents__item-box__body__sub-image"
         .main__show__contents__item-box__price
           = "¥#{@product.price}"
-        .main__show__contents__item-box__user-comment
-          = @product.description
+        .main__show__contents__item-box__description
+          %h4.main__show__contents__item-box__description__title
+            ユーザーからのコメント
+          .main__show__contents__item-box__description__user-comment
+            %p= @product.description
         .main__show__contents__item-box__table
           %table 
             %tr 
               %th
                 出品者
               %td
-                = @product.user.nickname
+                = @product.seller.nickname
             %tr 
               %th カテゴリー
               - if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
@@ -57,34 +60,54 @@
               %th
                 都道府県
               %td
-                = link_to "#{@product.prefecture.id}"
+                = link_to "#{@product.prefecture.name}"
             %tr
               %th 
                 発送までの日数
               %td
                 = @product.shipping_day
-      .main__show__contents__comment-box
-        .main__show__contents__comment-box__field
-          %textarea.main__show__contents__comment-box__field__form
-          %p.main__show__contents__comment-box__field__caution
-            *相手のことを考え丁寧なコメントを心がけましょう。
-            %br
-            不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .Bottom
             -if user_signed_in? && current_user.id == @product.seller_id
               = link_to edit_product_path(@product) do
                 %button{:type => "submit"}
                   商品編集へ
-
-            -elsif user_signed_in? && current_user.id != @product.seller_id
-              = link_to purchase_path(@product) do
+            -elsif user_signed_in? && current_user.id
+              = link_to product_purchases_path(@product) do
                 %button{:type => "submit"}
                   購入確認へ
-            -else
-              = link_to purchase_path(@product) do
-                %button{:type => "submit"}
-                  購入確認へ
-            -else
+            -else 
+              .MarioFields
+                .title-glitch-top
+                  .glitch.character{"data-text" => "出"} 購
+                  .glitch.character{"data-text" => "品"} 入
+                  .glitch.character{"data-text" => "に"} に
+                  .glitch.character{"data-text" => "は"} は
+                  .glitch.character{"data-text" => ""}
+                  .glitch.character{"data-text" => "ユ"} ユ
+                  .glitch.character{"data-text" => "ー"} ー
+                  .glitch.character{"data-text" => "ザ"} ザ
+                  .glitch.character{"data-text" => "ー"} ー
+                  .glitch.character{"data-text" => "登"} 登
+                  .glitch.character{"data-text" => "録"} 録
+                  .glitch.character{"data-text" => ""} 
+                  .glitch.character{"data-text" => "ま"} ま
+                  .glitch.character{"data-text" => "た"} た
+                  .glitch.character{"data-text" => "は"} は
+                  .glitch.character{"data-text" => ""} 
+                  .glitch.character{"data-text" => "ロ"} ロ
+                  .glitch.character{"data-text" => "グ"} グ
+                  .glitch.character{"data-text" => "イ"} イ
+                  .glitch.character{"data-text" => "ン"} ン
+                  .glitch.character{"data-text" => "が"} が
+                  .glitch.character{"data-text" => "必"} 必
+                  .glitch.character{"data-text" => "要"} 要
+                  .glitch.character{"data-text" => "で"} で
+                  .glitch.character{"data-text" => "す"} す
+                .MessageBox
+                  .MessageBox__Form
+                    = link_to "新規登録", new_user_registration_path, class: "post"
+                  .MessageBox__Form
+                    = link_to "ログイン", new_user_session_path, class: "post"
       .main__show__contents__related
         %ul.main__show__contents__related__links
           %li

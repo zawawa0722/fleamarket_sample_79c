@@ -36,7 +36,7 @@ p{
     margin:0 auto;
     &__contents{
       height:100%;
-      width:850px;
+      width:900px;
       background-color:#fff;
       margin:0 auto;
       &__item-box{
@@ -50,17 +50,17 @@ p{
           text-align:center;
         }
         &__body{
-          height:500px;
+          height:600px;
           width:100%;
           margin-top:15px;
           &__gyazo{
-            padding: 16px 30px 0;
+            padding: 16px 0 0 170px;
           }
           &__gyazo-image{
-            @include gyazo-image(100%, 300px);
+            @include gyazo-image(500px, 400px);
           }
           &__sub{
-            height:100px;
+            height:150px;
             width:500px;
             display:flex;
             justify-content:center;
@@ -76,10 +76,21 @@ p{
           font-weight:bold;
           text-align:center;
         }
-        &__user-comment{
-          height:35px;
-          width:700px;
+        &__description{
+          height:300px;
+          width:600px;
           margin:0 auto;
+          margin-bottom:10px;
+          border: 3px solid #646166;
+          line-height: 1.5;
+          overflow:scroll;
+          &__title{
+            height:30px;
+            width:700px;
+            font-weight:bold;
+            padding:5px 0 0 6px;
+            margin-bottom:5px;
+          }
         }
         table, th, td {
           border-collapse: collapse;
@@ -106,53 +117,29 @@ p{
           }
         }
       }
-      &__comment-box{
-        background-color:#fff;
-        padding:24px;
-        margin:10px 0;
-        text-align:center;
-        &__field{
-          height:100%;
-          width:100%;
-          padding:10px;
-          overflow:scroll;
-          &__form{
-            width:100%;
-            min-height:250px;
-          }
-          &__caution{
-            font-size:16px;
-            background-color:#f8f8f8;
-            padding:8px;
-            margin:10px 0;
-            text-align:left;
-          }
-        }
-        .Bottom{
+      .Bottom{
           display:flex;
           justify-content:space-between;
-          
-          &__btn{
-            display:inline-block;
-            height:74px;
-            width: 200px;
-            color:lightslategray;
-            font-weight:700;
-            background-color:white;
-            text-transform:uppercase;
-            letter-spacing:1px;
+        &__btn{
+          display:inline-block;
+          height:74px;
+          width: 200px;
+          color:lightslategray;
+          font-weight:700;
+          background-color:white;
+          text-transform:uppercase;
+          letter-spacing:1px;
+          transition:ease-in-out 0.25s;
+          span{
             transition:ease-in-out 0.25s;
-            span{
-              transition:ease-in-out 0.25s;
-            }
           }
-          btn:hover{
-            background-color:#36c2e0;
+        }
+        btn:hover{
+          background-color:#36c2e0;
+          color:white;
+          span{
+            padding-left:10px;
             color:white;
-            span{
-              padding-left:10px;
-              color:white;
-            }
           }
         }
       }
