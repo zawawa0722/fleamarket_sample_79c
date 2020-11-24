@@ -9,7 +9,7 @@
           - if product.buyer_id.nil?
             .Pickup__Contents__List1
               = link_to product_path(product) ,class: 'Item__Infomation' do
-                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '200px', class: 'Pickup__Contents__List1__image'
+                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '180px', class: 'Pickup__Contents__List1__image'
               .Pickup__Contents__List1__Introduction
                 %ul.Pickup__Contents__List1__Introduction__Left
                   %li.Pickup__Contents__List1__Introduction__Left__Name 
@@ -23,8 +23,8 @@
                   .Pickup__Contents__List1__Introduction__Right_Good ★1
           - else
             .Pickup__Contents__List1
-              = link_to product_path(product) ,class: 'Item__Infomation' do
-                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '200px', class: 'Pickup__Contents__List1__image'
+              = link_to sold_front_index_path ,class: 'Item__Infomation' do
+                = image_tag product.images.first.image.url, alt: '商品画像', height: '150px', width: '180px', class: 'Pickup__Contents__List1__image'
               .Pickup__Contents__List1__Introduction
                 %ul.Pickup__Contents__List1__Introduction__Left
                   %li.Pickup__Contents__List1__Introduction__Left__Name 

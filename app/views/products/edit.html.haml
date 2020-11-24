@@ -170,9 +170,9 @@
         %button{:type => "submit"}
           確認
           %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
-      .Bottom
-        %button{:type => "submit" }
-          = link_to '削除', product_path(@product.id), method: :delete
+      .Bottom2
+        .button2{:type => "submit" }
+          = link_to '削除', product_path(@product.id), method: :delete, class: "Btncolor"
           %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
         
 

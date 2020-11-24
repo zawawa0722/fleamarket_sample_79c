@@ -8,9 +8,10 @@
 @import "modules/header";
 @import "purchase/purchase";
 @import "information/sign_up";
-@import "information/_Log_in";
-@import "information/_address";
-@import "information/_my_page";
+@import "information/Log_in";
+@import "information/address";
+@import "information/my_page";
+@import "information/edit";
 @import "modules/detail";
 @import "modules/comments";
 @import "modules/contents";
@@ -25,4 +26,3 @@
 @import "modules/slick-theme.css"; 
 @import "modules/front.css"; 
 @import "modules/slick-theme.scss";
-
