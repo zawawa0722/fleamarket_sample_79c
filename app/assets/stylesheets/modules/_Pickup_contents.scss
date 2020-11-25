@@ -27,6 +27,9 @@
     height: 100%;
     width: 100%;
     display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
   &__List1 {
     width: 20%;
