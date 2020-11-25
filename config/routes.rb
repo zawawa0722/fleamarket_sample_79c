@@ -10,21 +10,16 @@ Rails.application.routes.draw do
   root "front#index"
 
   resources :front do
+  collection do
+    get 'sold'
+  end
     member do
       get 'products'
     end
   end
 
   resources :card, only: [:new, :create, :show, :destroy]
-
   resources :users, only: [:edit, :update, :show]
-
-  resources :detail
-
-  resources :comments
-
-  resources :complete, only: [:index]
-  
   resources :products do
     resources :purchases, only: [:index, :create]
     resources :comments,  only: [:create, :destroy]
