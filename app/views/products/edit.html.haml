@@ -31,10 +31,10 @@
                           = image_tag src="icon_image.png",id: "img#{i +1}"
                           %label.LeftContents__SecondContent__Center__img__choose
                             ファイルを選択
-                      %input{id: "images_attributes_#{i + 1}_image", :name => "product[images_attributes][#{i + 1}][image]", type: "file"}/
-              = f.fields_for :product_images do |image|
+                      %input{id: "product_images_attributes_#{i + 1}_image", :name => "product[images_attributes][#{i + 1}][image]", type: "file"}/
+              = f.fields_for :images do |image|
                 .js-file_group{"data-index" => "#{image.index}"}
-                  = image.file_field :image, class: 'js-file', id:"images_attributes_#{image.index}_image"
+                  = image.file_field :image, class: 'js-file', id:"product_images_attributes_#{image.index}_image"
                   %br/
                   %span.js-remove 削除
                 - if @product.persisted?
@@ -125,6 +125,7 @@
               
               .Main__right__ThirdContent__Category__Right
                 = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+                
             .Main__right__ThirdContent__Brand
               .Main__right__ThirdContent__Brand__Left
                 %p ブランド（任意）
