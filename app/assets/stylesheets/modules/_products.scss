@@ -1164,28 +1164,28 @@ $margin: 1.375rem;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-.Btncolor{
-  padding-top:25px;
-  color:rgb(252, 89, 89);
-  display: inline-block;
-  color: lightslategray;
-  border: 3px solid #f05166;
-  background-color: white;
-  height: 74px;
-  width: 200px;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: ease-in-out 0.25s;
-  &__Main{
+  .Btncolor{
+    padding-top:25px;
+    color:rgb(252, 89, 89);
+    display: inline-block;
+    color: lightslategray;
+    border: 3px solid #f05166;
+    background-color: white;
+    height: 74px;
+    width: 200px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: ease-in-out 0.25s;
+    &__Main{
+      transition: ease-in-out 0.25s;
+    }
   }
-}
   .Btncolor:hover {
     background: #f05166;
     color: white;
     padding-right: 10px;
     color: white;
-    }
   }
+}
