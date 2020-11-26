@@ -513,13 +513,13 @@
         &__Left {
           @include RightBox;
         }
-        // &__Right {
-        //   @include RightThird ;
-        //   @include SubmitBox;
-        //   .select_line {
-        //     @include SelectBox;
-        //   }
-        // }
+        &__Right {
+          @include RightThird ;
+          @include SubmitBox;
+          .select_line {
+          @include SelectBox;
+          }
+        }
         .append__category {
           float:left;
           margin-left: -110px;

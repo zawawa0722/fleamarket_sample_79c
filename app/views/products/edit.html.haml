@@ -122,10 +122,21 @@
             .Main__right__ThirdContent__Category
               .Main__right__ThirdContent__Category__Left
                 %p カテゴリー(必須)
-              
               .Main__right__ThirdContent__Category__Right
-                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
-                
+                = f.select :parent_name, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'select_line', id: 'parent_category'}
+            
+            .Main__right__ThirdContent__Category#children_wrapper
+              .Main__right__ThirdContent__Category__Left
+                %p カテゴリー2(必須)
+              .Main__right__ThirdContent__Category__Right
+                = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'select_line', id: 'child_category'}
+            
+            .Main__right__ThirdContent__Category#grandchildren_wrapper
+              .Main__right__ThirdContent__Category__Left
+                %p カテゴリー3(必須)
+              .Main__right__ThirdContent__Category__Right
+                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'select_line', id: 'grandchild_category'}
+            
             .Main__right__ThirdContent__Brand
               .Main__right__ThirdContent__Brand__Left
                 %p ブランド（任意）
