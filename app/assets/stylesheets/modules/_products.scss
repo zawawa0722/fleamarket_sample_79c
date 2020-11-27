@@ -515,7 +515,7 @@
         }
         &__Right {
           @include RightThird ;
-          @include SubmitBox;
+          // @include SubmitBox;
           .select_line {
           @include SelectBox;
           }
