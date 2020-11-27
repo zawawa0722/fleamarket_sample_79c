@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only:[:show, :destroy, :edit, :update, :purchase, :payment]
 
-
   def index
     @products = Product.includes(:images).order('created_at DESC').where.not(trading_status: 0)
   end  
@@ -56,24 +55,31 @@ class ProductsController < ApplicationController
 
   def edit
     grandchild_category = @product.category
-    child_category = grandchild_category.parent
-
-
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+    child_category = grandchild_category.parent    
+    if [1, 200, 346, 481, 625, 685, 798, 898, 984, 1093, 1147, 1207, 1270].include?(@category_id)
+    else
+      # ② ▼ 親カテゴリーのnameとidを配列代入
+      @category_parent_array = []
+      @category_parent_array << @product.category.parent.parent.name
+      @category_parent_array << @product.category.parent.parent.id
     end
-
-    @category_children_array = []
-    Category.where(ancestry: child_category.ancestry).each do |children|
+      # ③ ▼ 子カテゴリーを全てインスタンス変数へ代入
+      @category_children_array = Category.where(ancestry: child_category.ancestry)
+      # ④ ▼ 子カテゴリーのnameとidを配列代入
+      @category_children_array = []
+      Category.where(ancestry: child_category.ancestry).each do |children|
       @category_children_array << children
-    end
-
-    @category_grandchildren_array = []
-    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      end
+      # ⑤ ▼ 孫カテゴリーを全てインスタンス変数へ代入
+      @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry) 
+      # ⑥ ▼ 孫カテゴリーのnameとidを配列代入
+      @category_grandchildren_array = []
+      
+      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
       @category_grandchildren_array << grandchildren
-    end
+      end
   end
+    
 
   def update
     if@product.update(product_params)
@@ -116,4 +122,3 @@ private
     @product = Product.find(params[:id])
   end
 end
-
