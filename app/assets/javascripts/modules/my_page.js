@@ -6,7 +6,7 @@ $('.flip').mouseenter(function()
       });
   return false;
 });
-const uAParser = UAParser();
+//const uAParser = UAParser();
 
 const $flip = $('.js-flip');
 const $flipInner = $('.js-flip-inner');
