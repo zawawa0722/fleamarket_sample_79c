@@ -123,19 +123,10 @@
               .Main__right__ThirdContent__Category__Left
                 %p カテゴリー(必須)
               .Main__right__ThirdContent__Category__Right
-                = f.select :parent_name, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'select_line', id: 'parent_category'}
-            
-            .Main__right__ThirdContent__Category#children_wrapper
-              .Main__right__ThirdContent__Category__Left
-                %p カテゴリー2(必須)
-              .Main__right__ThirdContent__Category__Right
-                = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'select_line', id: 'child_category'}
-            
-            .Main__right__ThirdContent__Category#grandchildren_wrapper
-              .Main__right__ThirdContent__Category__Left
-                %p カテゴリー3(必須)
-              .Main__right__ThirdContent__Category__Right
-                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'select_line', id: 'grandchild_category'}
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { selected: @product.category.root.id}, {id: 'parent_category'}
+                
+                -# = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'select_line', id: 'child_category'}
+                -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'select_line', id: 'grandchild_category'}
             
             .Main__right__ThirdContent__Brand
               .Main__right__ThirdContent__Brand__Left
@@ -184,9 +175,7 @@
           %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
       .Bottom2
         .button2{:type => "submit" }
-          = link_to '削除', product_path(@product.id), class: "Btncolor", method: :delete
-          %span.glyphicon.glyphicon-arrow-right{"aria-hidden" => "true"}
-        
+          = link_to '削除', product_path(@product.id),  class: "Btncolor" , method: :delete
 
 
     .aago
