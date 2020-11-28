@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
     t.integer "shipping_type", null: false
     t.integer "shipping_fee", null: false
     t.integer "trading_status", null: false
-    t.bigint "user_id"
     t.bigint "category_id", null: false
     t.timestamp "deal_closed_date"
     t.datetime "created_at", precision: 6, null: false
@@ -80,8 +79,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_060221) do
     t.bigint "seller_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["seller_id"], name: "fk_rails_82f3b66938"
-    t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["seller_id"], name: "index_products_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
