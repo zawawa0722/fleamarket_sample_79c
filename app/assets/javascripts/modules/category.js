@@ -9,7 +9,7 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='Main__right__ThirdContent__Category__Right__category__choose__added' id= 'children_wrapper'>
                         <div class='Main__right__ThirdContent__Category__Right__category__choose1'>
-                          <select class=".Main__right__ThirdContent__Category__Right__category__choose--select" id="child_category" name="product[category_id]">
+                          <select class="Main__right__ThirdContent__Category__Right__category__choose--select" id="child_category" name="product[category_id]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
@@ -92,7 +92,7 @@ $(function(){
 
 $('.append__category').on('change','#child__category',function(){
   var childId = document.getElementById('child__category').value;
-  if(childId != "" && childId != 46 && childId != 74 && childId != 134 && childId != 142 && childId != 147 && childId != 150 && childId != 158){
+  if(childId != "" && childId != 1 && childId != 200 && childId != 346 && childId != 481 && childId != 625 && childId != 685 && childId != 798 && childId != 898 && childId != 984){
     $.ajax({
       url: '/products/get_category_grandchildren',
       type: 'GET',
