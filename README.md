@@ -102,7 +102,7 @@ Things you may want to cover:
 -belongs to :user
 -belongs to :item
 
-##  imagesテーブル
+##  productsテーブル
 
 |Column|Type|Option|
 |------|----|------|
