@@ -59,7 +59,7 @@ Things you may want to cover:
 
 -belongs to :user
 
-##  itemsテーブル
+##  productsテーブル
 
 |Column|Type|Option|
 |------|----|------|
